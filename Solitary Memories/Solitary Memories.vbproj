@@ -7,7 +7,7 @@
     <ProjectGuid>{4DA1D6A1-413B-4636-A4CC-024E1A052C15}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <StartupObject>Sub Main</StartupObject>
-    <RootNamespace>Solitary_Memories</RootNamespace>
+    <RootNamespace>Team123it.Arcaea.Solimmr</RootNamespace>
     <AssemblyName>Solitary Memories</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MyType>WindowsFormsWithCustomSubMain</MyType>
@@ -72,6 +72,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Frm_Start.Designer.vb">
+      <DependentUpon>Frm_Start.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Start.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -87,10 +93,14 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="Start.vb" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Frm_Start.resx">
+      <DependentUpon>Frm_Start.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
-      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <Generator>PublicVbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>

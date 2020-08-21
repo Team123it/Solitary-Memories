@@ -26,7 +26,7 @@ Namespace My.Resources
      Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.Runtime.CompilerServices.CompilerGeneratedAttribute(),  _
      Global.Microsoft.VisualBasic.HideModuleNameAttribute()>  _
-    Friend Module Resources
+    Public Module Resources
         
         Private resourceMan As Global.System.Resources.ResourceManager
         
@@ -36,10 +36,10 @@ Namespace My.Resources
         '''  返回此类使用的缓存的 ResourceManager 实例。
         '''</summary>
         <Global.System.ComponentModel.EditorBrowsableAttribute(Global.System.ComponentModel.EditorBrowsableState.Advanced)>  _
-        Friend ReadOnly Property ResourceManager() As Global.System.Resources.ResourceManager
+        Public ReadOnly Property ResourceManager() As Global.System.Resources.ResourceManager
             Get
                 If Object.ReferenceEquals(resourceMan, Nothing) Then
-                    Dim temp As Global.System.Resources.ResourceManager = New Global.System.Resources.ResourceManager("Solitary_Memories.Resources", GetType(Resources).Assembly)
+                    Dim temp As Global.System.Resources.ResourceManager = New Global.System.Resources.ResourceManager("Team123it.Arcaea.Solimmr.Resources", GetType(Resources).Assembly)
                     resourceMan = temp
                 End If
                 Return resourceMan
@@ -51,13 +51,88 @@ Namespace My.Resources
         '''  重写当前线程的 CurrentUICulture 属性。
         '''</summary>
         <Global.System.ComponentModel.EditorBrowsableAttribute(Global.System.ComponentModel.EditorBrowsableState.Advanced)>  _
-        Friend Property Culture() As Global.System.Globalization.CultureInfo
+        Public Property Culture() As Global.System.Globalization.CultureInfo
             Get
                 Return resourceCulture
             End Get
             Set
                 resourceCulture = value
             End Set
+        End Property
+        
+        '''<summary>
+        '''  查找类似 (C)Copyright 2015-2020 123 Open-Source Organization. All rights reserved. 的本地化字符串。
+        '''</summary>
+        Public ReadOnly Property Copyright_en_US() As String
+            Get
+                Return ResourceManager.GetString("Copyright_en_US", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  查找类似 (C)版权所有 2015-2020 123 Open-Source Organization. 保留所有权利. 的本地化字符串。
+        '''</summary>
+        Public ReadOnly Property Copyright_zh_CN() As String
+            Get
+                Return ResourceManager.GetString("Copyright_zh_CN", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  查找类似 solimmr.exe [-?|-sysrun|-def:BotArcAPI Path|-debug|-defip:Custom Arcaea API URL] 的本地化字符串。
+        '''</summary>
+        Public ReadOnly Property Usage() As String
+            Get
+                Return ResourceManager.GetString("Usage", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  查找类似 -?     Show this help
+        '''-sysrun     Start Solitary Memories as System Auto-Run Mode(Not show the starting window and the main window)
+        '''-def     Customize the root path of BotArcAPI this run
+        '''BotArcAPI Path     Customized root path of BotArcAPI this run(Must be an absolute path)
+        '''-debug     Enable Debug Mode(Show BotArcAPI Window)
+        '''-defip     [Experimental]Customized the API URL this run calls(The Return Data Format must be the same as BotArcAPI&apos;s)
+        '''Custom Arcaea API URL     Customized API URL of this run cal [字符串的其余部分被截断]&quot;; 的本地化字符串。
+        '''</summary>
+        Public ReadOnly Property UsageList_en_US() As String
+            Get
+                Return ResourceManager.GetString("UsageList_en_US", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  查找类似 -?     显示本帮助
+        '''-sysrun     以开机自启模式启动Solitary Memories(不显示启动窗口和主窗口)
+        '''-def     自定义本次运行使用的BotArcAPI项目根目录
+        '''BotArcAPI Path     本次运行使用的BotArcAPI项目根目录(必须是绝对路径)
+        '''-debug     启用调试(Debug)模式(显示BotArcAPI窗口)
+        '''-defip     [实验性]自定义本次运行调用的API的URL(需与BotArcAPI返回的格式完全一致)
+        '''Custom Arcaea API URL     本次运行调用的自定义Arcaea API的URL(带http/https) 的本地化字符串。
+        '''</summary>
+        Public ReadOnly Property UsageList_zh_CN() As String
+            Get
+                Return ResourceManager.GetString("UsageList_zh_CN", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  查找类似 Usage: 的本地化字符串。
+        '''</summary>
+        Public ReadOnly Property UsagePrefix_en_US() As String
+            Get
+                Return ResourceManager.GetString("UsagePrefix_en_US", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  查找类似 用法： 的本地化字符串。
+        '''</summary>
+        Public ReadOnly Property UsagePrefix_zh_CN() As String
+            Get
+                Return ResourceManager.GetString("UsagePrefix_zh_CN", resourceCulture)
+            End Get
         End Property
     End Module
 End Namespace

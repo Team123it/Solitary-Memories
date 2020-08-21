@@ -64,9 +64,9 @@ Namespace My
     Friend Module MySettingsProperty
         
         <Global.System.ComponentModel.Design.HelpKeywordAttribute("My.Settings")>  _
-        Friend ReadOnly Property Settings() As Global.Solitary_Memories.My.MySettings
+        Friend ReadOnly Property Settings() As Global.Team123it.Arcaea.Solimmr.My.MySettings
             Get
-                Return Global.Solitary_Memories.My.MySettings.Default
+                Return Global.Team123it.Arcaea.Solimmr.My.MySettings.Default
             End Get
         End Property
     End Module
