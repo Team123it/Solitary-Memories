@@ -5,6 +5,10 @@ VisualStudioVersion = 15.0.27703.2042
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Solitary Memories", "Solitary Memories\Solitary Memories.vbproj", "{4DA1D6A1-413B-4636-A4CC-024E1A052C15}"
 EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Solitary Memories Global Library", "Solitary Memories Global Library\Solitary Memories Global Library.vbproj", "{B2295599-FCBD-4123-A318-2E944AF61286}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Solitary Memories UI Library", "Solitary Memories UI Library\Solitary Memories UI Library.vbproj", "{412E6B0F-E051-41F9-9D0A-C0258B717773}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{4DA1D6A1-413B-4636-A4CC-024E1A052C15}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4DA1D6A1-413B-4636-A4CC-024E1A052C15}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4DA1D6A1-413B-4636-A4CC-024E1A052C15}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B2295599-FCBD-4123-A318-2E944AF61286}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B2295599-FCBD-4123-A318-2E944AF61286}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B2295599-FCBD-4123-A318-2E944AF61286}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B2295599-FCBD-4123-A318-2E944AF61286}.Release|Any CPU.Build.0 = Release|Any CPU
+		{412E6B0F-E051-41F9-9D0A-C0258B717773}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{412E6B0F-E051-41F9-9D0A-C0258B717773}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{412E6B0F-E051-41F9-9D0A-C0258B717773}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{412E6B0F-E051-41F9-9D0A-C0258B717773}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

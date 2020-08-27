@@ -1,13 +1,13 @@
 ﻿Imports System.Runtime.InteropServices
 Imports System.Text
+Imports Team123it.Arcaea.Solimmr.UI
 
 Public Class Start
 	Public Shared Sub Main()
 		Select Case System.Environment.GetCommandLineArgs.Length
 			Case 1
 				Dim Start As New Frm_Start
-				Dim CurrentApp As New ApplicationContext(Start)
-				Application.Run(CurrentApp)
+				Application.Run(Start)
 			Case 2
 				Dim arg1 As String = System.Environment.GetCommandLineArgs(1).Trim.ToLower
 				Select Case arg1
