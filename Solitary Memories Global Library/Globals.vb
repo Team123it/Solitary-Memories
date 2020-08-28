@@ -3,7 +3,6 @@ Imports System.Environment
 Imports System.IO
 Imports System.Runtime.InteropServices
 Imports System.Threading
-Imports System.Windows.Forms
 
 ''' <summary>
 ''' Solitary Memories 公用方法模块
@@ -17,6 +16,8 @@ Public Module Globals
 		Private Shared _State As Boolean
 
 		Private Shared _BotArcAPI As Process
+
+		Private Shared _KeepBotArcAPIRun As Thread
 
 		''' <summary>
 		''' 获取 BotArcAPI 进程是否正在运行的标志。
@@ -82,6 +83,12 @@ Public Module Globals
 				Do
 					Dim CurrentString As String = _BotArcAPI.StandardOutput.ReadLine()
 					If CurrentString.ToLower.Contains("http server started at") Then '如果程序已启动
+						_KeepBotArcAPIRun = New Thread(New ThreadStart(Sub()
+																		   Do
+																			   _BotArcAPI.StandardOutput.ReadLine()
+																		   Loop
+																	   End Sub))
+						_KeepBotArcAPIRun.Start()
 						Return True
 					End If
 				Loop
@@ -96,6 +103,7 @@ Public Module Globals
 				AttachConsole(_BotArcAPI.Id)
 				SetConsoleCtrlHandler(IntPtr.Zero, True)
 				GenerateConsoleCtrlEvent(0, 0) '发送Ctrl+C
+				_KeepBotArcAPIRun.Interrupt()
 				Do
 					Dim CurrentString As String = _BotArcAPI.StandardOutput.ReadLine()
 					If CurrentString.ToLower.Contains("stop logging") Then '如果程序已关闭
@@ -110,6 +118,18 @@ Public Module Globals
 			End Try
 		End Function
 	End Class
+
+	''' <summary>
+	''' 判断当前进程是否为本程序的第一个实例。
+	''' </summary>
+	Public Function IsFirstInstance() As Boolean
+		Dim ps As Process() = Process.GetProcessesByName(Process.GetCurrentProcess.ProcessName)
+		If ps.Length <= 1 Then
+			Return True
+		Else
+			Return False
+		End If
+	End Function
 
 	<DllImport("kernel32.dll")>
 	Private Function GenerateConsoleCtrlEvent(dwCtrlEvent As Int32, dwProcessGroupId As Int32) As Boolean : End Function

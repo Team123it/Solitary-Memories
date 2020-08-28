@@ -1,11 +1,25 @@
 ﻿Imports System.Runtime.InteropServices
 Imports System.Text
 Imports Team123it.Arcaea.Solimmr.UI
+Imports Team123it.Arcaea.Solimmr.Global
 
 Public Class Start
 	Public Shared Sub Main()
+		If (Not Command().Trim().ToLower = "-restart") AndAlso (Not IsFirstInstance()) Then '如果已经有Solitary Memories的实例在运行
+			MsgBox("不能同时运行多个Solitary Memories实例。", 16, "Solitary Memories")
+			End
+		End If
 		Select Case System.Environment.GetCommandLineArgs.Length
 			Case 1
+NormalStart:
+				If [Global].My.MySettings.Default.IsFirstStart Then
+					If MsgBox("Arcaea查分已违反了Lowiro服务协议(Terms of Service)第3.2-3与第3.2-6条。" & vbCrLf &
+						   "由于使用本工具带来的一切后果, 123 Open-Source Organization不承担任何责任。" & vbCrLf &
+						   "是否继续使用本工具?" & vbCrLf &
+						   "(此提示仅会在首次启动Solitary Memories时出现)", vbExclamation + vbYesNo, "警告") <> vbYes Then
+						End
+					End If
+				End If
 				Dim Start As New Frm_Start
 				Application.Run(Start)
 			Case 2
@@ -15,6 +29,8 @@ Public Class Start
 						GetCommandLineHelp()
 					Case "-sysrun" '开机自启模式
 
+					Case "-restart"
+						GoTo NormalStart
 					Case Else
 						GetCommandLineHelp()
 				End Select

@@ -54,13 +54,16 @@ Namespace My
             End Get
         End Property
         
-        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.Configuration.DefaultSettingValueAttribute("61666")>  _
-        Public ReadOnly Property APIPort() As UShort
+        Public Property APIPort() As UShort
             Get
                 Return CType(Me("APIPort"),UShort)
             End Get
+            Set
+                Me("APIPort") = value
+            End Set
         End Property
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
@@ -72,6 +75,18 @@ Namespace My
             End Get
             Set
                 Me("IsFirstStart") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("2")>  _
+        Public Property QueryFrequency() As Byte
+            Get
+                Return CType(Me("QueryFrequency"),Byte)
+            End Get
+            Set
+                Me("QueryFrequency") = value
             End Set
         End Property
     End Class

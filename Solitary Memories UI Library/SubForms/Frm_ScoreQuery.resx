@@ -117,32 +117,7 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="lbl_Step3_ifmt2.Text" xml:space="preserve">
-    <value>您可以通过使用 123 ArcAccGenerator* 批量生成查分专用账号(包括用户名，密码以及Token)。
-123 ArcAccGenerator 随 Solitary Memories 附带，文件路径为[本程序路径]\bin\123ArcAccGenerator.exe。
-
-如需手动添加账号(不需要Token)，请单击"手动添加账号(&amp;M)"。
-如需使用 123 ArcAccGenerator 生成账号，请在保存账号数据文本文件后单击"导入账号列表(&amp;I)"。
-
-* 需要Java 运行时环境(JRE)版本8.0+</value>
-  </data>
-  <data name="lbl_welcome_ifmt.Text" xml:space="preserve">
-    <value>欢迎使用Solitary Memories - 桌面版Arcaea多功能查分工具。
-
-特色功能: 玩家打歌提醒:设置完某个玩家打某首曲子到达某个分数的打歌提醒后,将在玩家打完歌后直接以气泡形式提醒此计算机的用户。
-
-本工具基于 BotArcAPI 项目(开发者：*TheSnowfield)与 123 ArcAccGenerator 项目(开发者： *Misaka12456)开发。
-
-在使用本工具前，您需要初始化一些内容以便Solitary Memories运行。
-单击”下一步“继续。</value>
-  </data>
-  <metadata name="ttp_Step2_RunningPort.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <metadata name="bgwk_ScoreQuery.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
-  </metadata>
-  <metadata name="ofd_Step2_ImportAccountsList.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>205, 17</value>
-  </metadata>
-  <metadata name="bgwk_Step1_CheckUpdate.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>436, 17</value>
   </metadata>
 </root>
