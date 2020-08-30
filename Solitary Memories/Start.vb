@@ -2,6 +2,8 @@
 Imports System.Text
 Imports Team123it.Arcaea.Solimmr.UI
 Imports Team123it.Arcaea.Solimmr.Global
+Imports System.IO.Compression
+Imports System.IO
 
 Public Class Start
 	Public Shared Sub Main()
@@ -28,9 +30,17 @@ NormalStart:
 					Case "-?" '帮助
 						GetCommandLineHelp()
 					Case "-sysrun" '开机自启模式
-
+						Dim Start As New Frm_Start
+						Start.Tag = "sysrun"
+						Application.Run(Start)
+					Case "-debug"
+						[Global].My.MySettings.Default.IsDebugModeOn = True
+						GoTo NormalStart
 					Case "-restart"
 						GoTo NormalStart
+					Case "-update"
+						[Global].My.MySettings.Default.Upgrade()
+						[Global].My.MySettings.Default.Save()
 					Case Else
 						GetCommandLineHelp()
 				End Select

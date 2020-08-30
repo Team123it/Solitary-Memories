@@ -117,29 +117,22 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Copyright_en_US" xml:space="preserve">
-    <value>(C)Copyright 2015-2020 123 Open-Source Organization. All rights reserved.</value>
-  </data>
-  <data name="Copyright_zh_CN" xml:space="preserve">
-    <value>(C)版权所有 2015-2020 123 Open-Source Organization. 保留所有权利.</value>
-  </data>
-  <data name="Usage" xml:space="preserve">
-    <value>solimmr.exe [-?|-sysrun|-debug]</value>
-  </data>
-  <data name="UsageList_en_US" xml:space="preserve">
-    <value>-?     Show this help
--sysrun     Start Solitary Memories as System Auto-Run Mode(Not show the starting window and the main window)
--debug     Enable Debug Mode(Show BotArcAPI Window)</value>
-  </data>
-  <data name="UsageList_zh_CN" xml:space="preserve">
-    <value>-?     显示本帮助
--sysrun     以开机自启模式启动Solitary Memories(不显示启动窗口和主窗口)
--debug     启用调试(Debug)模式(显示BotArcAPI窗口)</value>
-  </data>
-  <data name="UsagePrefix_en_US" xml:space="preserve">
-    <value>Usage:</value>
-  </data>
-  <data name="UsagePrefix_zh_CN" xml:space="preserve">
-    <value>用法：</value>
-  </data>
+  <metadata name="dgvcln_id.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="dgvcln_playerName.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="dgvcln_songName.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="dgvcln_difficulty.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="dgvcln_score.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="dtst_subscribeList.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
 </root>

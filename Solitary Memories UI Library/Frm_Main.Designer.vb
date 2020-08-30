@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class Frm_Main
 	Inherits System.Windows.Forms.Form
 
 	'Form 重写 Dispose，以清理组件列表。
-	<System.Diagnostics.DebuggerNonUserCode()> _
+	<System.Diagnostics.DebuggerNonUserCode()>
 	Protected Overrides Sub Dispose(ByVal disposing As Boolean)
 		Try
 			If disposing AndAlso components IsNot Nothing Then
@@ -20,13 +20,27 @@ Partial Class Frm_Main
 	'注意: 以下过程是 Windows 窗体设计器所必需的
 	'可以使用 Windows 窗体设计器修改它。  
 	'不要使用代码编辑器修改它。
-	<System.Diagnostics.DebuggerStepThrough()> _
+	<System.Diagnostics.DebuggerStepThrough()>
 	Private Sub InitializeComponent()
 		Me.components = New System.ComponentModel.Container()
 		Me.msp_Main = New System.Windows.Forms.MenuStrip()
 		Me.tsmi_players = New System.Windows.Forms.ToolStripMenuItem()
+		Me.tsmi_players_Manage = New System.Windows.Forms.ToolStripMenuItem()
+		Me.tssp_players_1 = New System.Windows.Forms.ToolStripSeparator()
+		Me.tsmi_players_RefreshStat = New System.Windows.Forms.ToolStripMenuItem()
 		Me.tsmi_scores = New System.Windows.Forms.ToolStripMenuItem()
+		Me.tsmi_scores_query = New System.Windows.Forms.ToolStripMenuItem()
+		Me.tsmi_scores_subscribe = New System.Windows.Forms.ToolStripMenuItem()
+		Me.tsmi_score_subscribe_Add = New System.Windows.Forms.ToolStripMenuItem()
+		Me.tsmi_score_subscribe_Remove = New System.Windows.Forms.ToolStripMenuItem()
+		Me.tsmi_score_subscribe_List = New System.Windows.Forms.ToolStripMenuItem()
+		Me.tsmi_scores_best30 = New System.Windows.Forms.ToolStripMenuItem()
 		Me.tsmi_options = New System.Windows.Forms.ToolStripMenuItem()
+		Me.tsmi_help = New System.Windows.Forms.ToolStripMenuItem()
+		Me.tsmi_help_checkupd = New System.Windows.Forms.ToolStripMenuItem()
+		Me.tsmi_help_checkapiupd = New System.Windows.Forms.ToolStripMenuItem()
+		Me.tsmi_help_sep = New System.Windows.Forms.ToolStripSeparator()
+		Me.tsmi_help_about = New System.Windows.Forms.ToolStripMenuItem()
 		Me.ntfi_Main = New System.Windows.Forms.NotifyIcon(Me.components)
 		Me.gbx_Start = New System.Windows.Forms.GroupBox()
 		Me.lbl_autoQueryFreq = New System.Windows.Forms.Label()
@@ -44,15 +58,31 @@ Partial Class Frm_Main
 		Me.lbl_ifmt = New System.Windows.Forms.Label()
 		Me.gbx_tips = New System.Windows.Forms.GroupBox()
 		Me.lbl_tips = New System.Windows.Forms.Label()
-		Me.tsmi_scores_query = New System.Windows.Forms.ToolStripMenuItem()
+		Me.cmsp_Main = New System.Windows.Forms.ContextMenuStrip(Me.components)
+		Me.tsmi_ntfi_Players = New System.Windows.Forms.ToolStripMenuItem()
+		Me.tsmi_ntfi_Players_Manage = New System.Windows.Forms.ToolStripMenuItem()
+		Me.tsmi_ntfi_Scores = New System.Windows.Forms.ToolStripMenuItem()
+		Me.tsmi_ntfi_Scores_Query = New System.Windows.Forms.ToolStripMenuItem()
+		Me.tsmi_ntfi_Scores_Subscribe = New System.Windows.Forms.ToolStripMenuItem()
+		Me.tsmi_ntfi_Scores_Subscribe_Add = New System.Windows.Forms.ToolStripMenuItem()
+		Me.tsmi_ntfi_Scores_Subscribe_Remove = New System.Windows.Forms.ToolStripMenuItem()
+		Me.tsmi_ntfi_Scores_Subscribe_ShowList = New System.Windows.Forms.ToolStripMenuItem()
+		Me.tsmi_ntfi_Scores_Best30Query = New System.Windows.Forms.ToolStripMenuItem()
+		Me.tsmi_ntfi_Options = New System.Windows.Forms.ToolStripMenuItem()
+		Me.tsmi_ntfi_Sep1 = New System.Windows.Forms.ToolStripSeparator()
+		Me.tsmi_ntfi_ShowMain = New System.Windows.Forms.ToolStripMenuItem()
+		Me.tsmi_ntfi_Sep2 = New System.Windows.Forms.ToolStripSeparator()
+		Me.tsmi_ntfi_Exit = New System.Windows.Forms.ToolStripMenuItem()
+		Me.bgwk_AutoUpdate = New System.ComponentModel.BackgroundWorker()
 		Me.msp_Main.SuspendLayout()
 		Me.gbx_Start.SuspendLayout()
 		Me.gbx_tips.SuspendLayout()
+		Me.cmsp_Main.SuspendLayout()
 		Me.SuspendLayout()
 		'
 		'msp_Main
 		'
-		Me.msp_Main.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmi_players, Me.tsmi_scores, Me.tsmi_options})
+		Me.msp_Main.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmi_players, Me.tsmi_scores, Me.tsmi_options, Me.tsmi_help})
 		Me.msp_Main.Location = New System.Drawing.Point(0, 0)
 		Me.msp_Main.Name = "msp_Main"
 		Me.msp_Main.Size = New System.Drawing.Size(686, 25)
@@ -61,16 +91,72 @@ Partial Class Frm_Main
 		'
 		'tsmi_players
 		'
+		Me.tsmi_players.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmi_players_Manage, Me.tssp_players_1, Me.tsmi_players_RefreshStat})
 		Me.tsmi_players.Name = "tsmi_players"
 		Me.tsmi_players.Size = New System.Drawing.Size(59, 21)
 		Me.tsmi_players.Text = "玩家(&P)"
 		'
+		'tsmi_players_Manage
+		'
+		Me.tsmi_players_Manage.Name = "tsmi_players_Manage"
+		Me.tsmi_players_Manage.Size = New System.Drawing.Size(144, 22)
+		Me.tsmi_players_Manage.Text = "管理玩家(&M)"
+		'
+		'tssp_players_1
+		'
+		Me.tssp_players_1.Name = "tssp_players_1"
+		Me.tssp_players_1.Size = New System.Drawing.Size(141, 6)
+		'
+		'tsmi_players_RefreshStat
+		'
+		Me.tsmi_players_RefreshStat.Name = "tsmi_players_RefreshStat"
+		Me.tsmi_players_RefreshStat.Size = New System.Drawing.Size(144, 22)
+		Me.tsmi_players_RefreshStat.Text = "刷新状态(&R)"
+		'
 		'tsmi_scores
 		'
-		Me.tsmi_scores.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmi_scores_query})
+		Me.tsmi_scores.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmi_scores_query, Me.tsmi_scores_subscribe, Me.tsmi_scores_best30})
 		Me.tsmi_scores.Name = "tsmi_scores"
 		Me.tsmi_scores.Size = New System.Drawing.Size(59, 21)
 		Me.tsmi_scores.Text = "成绩(&S)"
+		'
+		'tsmi_scores_query
+		'
+		Me.tsmi_scores_query.Name = "tsmi_scores_query"
+		Me.tsmi_scores_query.Size = New System.Drawing.Size(159, 22)
+		Me.tsmi_scores_query.Text = "查询(&Q)"
+		'
+		'tsmi_scores_subscribe
+		'
+		Me.tsmi_scores_subscribe.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmi_score_subscribe_Add, Me.tsmi_score_subscribe_Remove, Me.tsmi_score_subscribe_List})
+		Me.tsmi_scores_subscribe.Name = "tsmi_scores_subscribe"
+		Me.tsmi_scores_subscribe.Size = New System.Drawing.Size(159, 22)
+		Me.tsmi_scores_subscribe.Text = "订阅(&S)"
+		'
+		'tsmi_score_subscribe_Add
+		'
+		Me.tsmi_score_subscribe_Add.Name = "tsmi_score_subscribe_Add"
+		Me.tsmi_score_subscribe_Add.Size = New System.Drawing.Size(162, 22)
+		Me.tsmi_score_subscribe_Add.Text = "添加订阅(&A)"
+		'
+		'tsmi_score_subscribe_Remove
+		'
+		Me.tsmi_score_subscribe_Remove.Name = "tsmi_score_subscribe_Remove"
+		Me.tsmi_score_subscribe_Remove.Size = New System.Drawing.Size(162, 22)
+		Me.tsmi_score_subscribe_Remove.Text = "移除订阅(&R)"
+		'
+		'tsmi_score_subscribe_List
+		'
+		Me.tsmi_score_subscribe_List.Name = "tsmi_score_subscribe_List"
+		Me.tsmi_score_subscribe_List.Size = New System.Drawing.Size(162, 22)
+		Me.tsmi_score_subscribe_List.Text = "查看订阅列表(&L)"
+		'
+		'tsmi_scores_best30
+		'
+		Me.tsmi_scores_best30.Name = "tsmi_scores_best30"
+		Me.tsmi_scores_best30.Size = New System.Drawing.Size(159, 22)
+		Me.tsmi_scores_best30.Text = "Best30 查询(&B)"
+		Me.tsmi_scores_best30.Visible = False
 		'
 		'tsmi_options
 		'
@@ -78,8 +164,40 @@ Partial Class Frm_Main
 		Me.tsmi_options.Size = New System.Drawing.Size(62, 21)
 		Me.tsmi_options.Text = "选项(&O)"
 		'
+		'tsmi_help
+		'
+		Me.tsmi_help.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmi_help_checkupd, Me.tsmi_help_checkapiupd, Me.tsmi_help_sep, Me.tsmi_help_about})
+		Me.tsmi_help.Name = "tsmi_help"
+		Me.tsmi_help.Size = New System.Drawing.Size(61, 21)
+		Me.tsmi_help.Text = "帮助(&H)"
+		'
+		'tsmi_help_checkupd
+		'
+		Me.tsmi_help_checkupd.Name = "tsmi_help_checkupd"
+		Me.tsmi_help_checkupd.Size = New System.Drawing.Size(235, 22)
+		Me.tsmi_help_checkupd.Text = "检查更新(&C)"
+		'
+		'tsmi_help_checkapiupd
+		'
+		Me.tsmi_help_checkapiupd.Name = "tsmi_help_checkapiupd"
+		Me.tsmi_help_checkapiupd.Size = New System.Drawing.Size(235, 22)
+		Me.tsmi_help_checkapiupd.Text = "检查 BotArcAPI 更新(&B)"
+		'
+		'tsmi_help_sep
+		'
+		Me.tsmi_help_sep.Name = "tsmi_help_sep"
+		Me.tsmi_help_sep.Size = New System.Drawing.Size(232, 6)
+		'
+		'tsmi_help_about
+		'
+		Me.tsmi_help_about.Name = "tsmi_help_about"
+		Me.tsmi_help_about.Size = New System.Drawing.Size(235, 22)
+		Me.tsmi_help_about.Text = "关于 Solitary Memories(&A)..."
+		'
 		'ntfi_Main
 		'
+		Me.ntfi_Main.ContextMenuStrip = Me.cmsp_Main
+		Me.ntfi_Main.Icon = Global.Team123it.Arcaea.Solimmr.UI.My.Resources.Resources.icon
 		Me.ntfi_Main.Text = "Solitary Memories"
 		Me.ntfi_Main.Visible = True
 		'
@@ -240,11 +358,102 @@ Partial Class Frm_Main
 		Me.lbl_tips.TabIndex = 4
 		Me.lbl_tips.Text = "(暂无)"
 		'
-		'tsmi_scores_query
+		'cmsp_Main
 		'
-		Me.tsmi_scores_query.Name = "tsmi_scores_query"
-		Me.tsmi_scores_query.Size = New System.Drawing.Size(180, 22)
-		Me.tsmi_scores_query.Text = "查询(&Q)"
+		Me.cmsp_Main.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmi_ntfi_Players, Me.tsmi_ntfi_Scores, Me.tsmi_ntfi_Options, Me.tsmi_ntfi_Sep1, Me.tsmi_ntfi_ShowMain, Me.tsmi_ntfi_Sep2, Me.tsmi_ntfi_Exit})
+		Me.cmsp_Main.Name = "cmsp_Main"
+		Me.cmsp_Main.Size = New System.Drawing.Size(226, 126)
+		'
+		'tsmi_ntfi_Players
+		'
+		Me.tsmi_ntfi_Players.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmi_ntfi_Players_Manage})
+		Me.tsmi_ntfi_Players.Name = "tsmi_ntfi_Players"
+		Me.tsmi_ntfi_Players.Size = New System.Drawing.Size(225, 22)
+		Me.tsmi_ntfi_Players.Text = "玩家(&P)"
+		'
+		'tsmi_ntfi_Players_Manage
+		'
+		Me.tsmi_ntfi_Players_Manage.Name = "tsmi_ntfi_Players_Manage"
+		Me.tsmi_ntfi_Players_Manage.Size = New System.Drawing.Size(144, 22)
+		Me.tsmi_ntfi_Players_Manage.Text = "管理玩家(&M)"
+		'
+		'tsmi_ntfi_Scores
+		'
+		Me.tsmi_ntfi_Scores.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmi_ntfi_Scores_Query, Me.tsmi_ntfi_Scores_Subscribe, Me.tsmi_ntfi_Scores_Best30Query})
+		Me.tsmi_ntfi_Scores.Name = "tsmi_ntfi_Scores"
+		Me.tsmi_ntfi_Scores.Size = New System.Drawing.Size(225, 22)
+		Me.tsmi_ntfi_Scores.Text = "成绩(&S)"
+		'
+		'tsmi_ntfi_Scores_Query
+		'
+		Me.tsmi_ntfi_Scores_Query.Name = "tsmi_ntfi_Scores_Query"
+		Me.tsmi_ntfi_Scores_Query.Size = New System.Drawing.Size(155, 22)
+		Me.tsmi_ntfi_Scores_Query.Text = "查询(&Q)..."
+		'
+		'tsmi_ntfi_Scores_Subscribe
+		'
+		Me.tsmi_ntfi_Scores_Subscribe.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmi_ntfi_Scores_Subscribe_Add, Me.tsmi_ntfi_Scores_Subscribe_Remove, Me.tsmi_ntfi_Scores_Subscribe_ShowList})
+		Me.tsmi_ntfi_Scores_Subscribe.Name = "tsmi_ntfi_Scores_Subscribe"
+		Me.tsmi_ntfi_Scores_Subscribe.Size = New System.Drawing.Size(155, 22)
+		Me.tsmi_ntfi_Scores_Subscribe.Text = "订阅(&S)"
+		'
+		'tsmi_ntfi_Scores_Subscribe_Add
+		'
+		Me.tsmi_ntfi_Scores_Subscribe_Add.Name = "tsmi_ntfi_Scores_Subscribe_Add"
+		Me.tsmi_ntfi_Scores_Subscribe_Add.Size = New System.Drawing.Size(162, 22)
+		Me.tsmi_ntfi_Scores_Subscribe_Add.Text = "添加订阅(&A)"
+		'
+		'tsmi_ntfi_Scores_Subscribe_Remove
+		'
+		Me.tsmi_ntfi_Scores_Subscribe_Remove.Name = "tsmi_ntfi_Scores_Subscribe_Remove"
+		Me.tsmi_ntfi_Scores_Subscribe_Remove.Size = New System.Drawing.Size(162, 22)
+		Me.tsmi_ntfi_Scores_Subscribe_Remove.Text = "移除订阅(&R)"
+		'
+		'tsmi_ntfi_Scores_Subscribe_ShowList
+		'
+		Me.tsmi_ntfi_Scores_Subscribe_ShowList.Name = "tsmi_ntfi_Scores_Subscribe_ShowList"
+		Me.tsmi_ntfi_Scores_Subscribe_ShowList.Size = New System.Drawing.Size(162, 22)
+		Me.tsmi_ntfi_Scores_Subscribe_ShowList.Text = "查看订阅列表(&L)"
+		'
+		'tsmi_ntfi_Scores_Best30Query
+		'
+		Me.tsmi_ntfi_Scores_Best30Query.Name = "tsmi_ntfi_Scores_Best30Query"
+		Me.tsmi_ntfi_Scores_Best30Query.Size = New System.Drawing.Size(155, 22)
+		Me.tsmi_ntfi_Scores_Best30Query.Text = "Best30查询(&B)"
+		Me.tsmi_ntfi_Scores_Best30Query.Visible = False
+		'
+		'tsmi_ntfi_Options
+		'
+		Me.tsmi_ntfi_Options.Name = "tsmi_ntfi_Options"
+		Me.tsmi_ntfi_Options.Size = New System.Drawing.Size(225, 22)
+		Me.tsmi_ntfi_Options.Text = "选项(&O)"
+		'
+		'tsmi_ntfi_Sep1
+		'
+		Me.tsmi_ntfi_Sep1.Name = "tsmi_ntfi_Sep1"
+		Me.tsmi_ntfi_Sep1.Size = New System.Drawing.Size(222, 6)
+		'
+		'tsmi_ntfi_ShowMain
+		'
+		Me.tsmi_ntfi_ShowMain.Name = "tsmi_ntfi_ShowMain"
+		Me.tsmi_ntfi_ShowMain.Size = New System.Drawing.Size(225, 22)
+		Me.tsmi_ntfi_ShowMain.Text = "显示主界面(&M)"
+		'
+		'tsmi_ntfi_Sep2
+		'
+		Me.tsmi_ntfi_Sep2.Name = "tsmi_ntfi_Sep2"
+		Me.tsmi_ntfi_Sep2.Size = New System.Drawing.Size(222, 6)
+		'
+		'tsmi_ntfi_Exit
+		'
+		Me.tsmi_ntfi_Exit.Name = "tsmi_ntfi_Exit"
+		Me.tsmi_ntfi_Exit.Size = New System.Drawing.Size(225, 22)
+		Me.tsmi_ntfi_Exit.Text = "退出 Solitary Memories(&E)"
+		'
+		'bgwk_AutoUpdate
+		'
+		Me.bgwk_AutoUpdate.WorkerReportsProgress = True
+		Me.bgwk_AutoUpdate.WorkerSupportsCancellation = True
 		'
 		'Frm_Main
 		'
@@ -254,7 +463,10 @@ Partial Class Frm_Main
 		Me.Controls.Add(Me.gbx_tips)
 		Me.Controls.Add(Me.gbx_Start)
 		Me.Controls.Add(Me.msp_Main)
+		Me.Icon = Global.Team123it.Arcaea.Solimmr.UI.My.Resources.Resources.icon
 		Me.MaximizeBox = False
+		Me.MaximumSize = New System.Drawing.Size(702, 310)
+		Me.MinimumSize = New System.Drawing.Size(702, 310)
 		Me.Name = "Frm_Main"
 		Me.Text = "Solitary Memories"
 		Me.msp_Main.ResumeLayout(False)
@@ -262,6 +474,7 @@ Partial Class Frm_Main
 		Me.gbx_Start.ResumeLayout(False)
 		Me.gbx_Start.PerformLayout()
 		Me.gbx_tips.ResumeLayout(False)
+		Me.cmsp_Main.ResumeLayout(False)
 		Me.ResumeLayout(False)
 		Me.PerformLayout()
 
@@ -289,4 +502,33 @@ Partial Class Frm_Main
 	Friend WithEvents lbl_min As Windows.Forms.Label
 	Friend WithEvents lbl_autoQueryFreq As Windows.Forms.Label
 	Friend WithEvents tsmi_scores_query As Windows.Forms.ToolStripMenuItem
+	Friend WithEvents tsmi_scores_subscribe As Windows.Forms.ToolStripMenuItem
+	Friend WithEvents tsmi_score_subscribe_Add As Windows.Forms.ToolStripMenuItem
+	Friend WithEvents tsmi_score_subscribe_Remove As Windows.Forms.ToolStripMenuItem
+	Friend WithEvents tsmi_score_subscribe_List As Windows.Forms.ToolStripMenuItem
+	Friend WithEvents tsmi_players_Manage As Windows.Forms.ToolStripMenuItem
+	Friend WithEvents tssp_players_1 As Windows.Forms.ToolStripSeparator
+	Friend WithEvents tsmi_players_RefreshStat As Windows.Forms.ToolStripMenuItem
+	Friend WithEvents tsmi_scores_best30 As Windows.Forms.ToolStripMenuItem
+	Friend WithEvents tsmi_help As Windows.Forms.ToolStripMenuItem
+	Friend WithEvents tsmi_help_checkupd As Windows.Forms.ToolStripMenuItem
+	Friend WithEvents tsmi_help_checkapiupd As Windows.Forms.ToolStripMenuItem
+	Friend WithEvents tsmi_help_sep As Windows.Forms.ToolStripSeparator
+	Friend WithEvents tsmi_help_about As Windows.Forms.ToolStripMenuItem
+	Friend WithEvents cmsp_Main As Windows.Forms.ContextMenuStrip
+	Friend WithEvents tsmi_ntfi_Players As Windows.Forms.ToolStripMenuItem
+	Friend WithEvents tsmi_ntfi_Players_Manage As Windows.Forms.ToolStripMenuItem
+	Friend WithEvents tsmi_ntfi_Scores As Windows.Forms.ToolStripMenuItem
+	Friend WithEvents tsmi_ntfi_Options As Windows.Forms.ToolStripMenuItem
+	Friend WithEvents tsmi_ntfi_Sep1 As Windows.Forms.ToolStripSeparator
+	Friend WithEvents tsmi_ntfi_ShowMain As Windows.Forms.ToolStripMenuItem
+	Friend WithEvents tsmi_ntfi_Sep2 As Windows.Forms.ToolStripSeparator
+	Friend WithEvents tsmi_ntfi_Exit As Windows.Forms.ToolStripMenuItem
+	Friend WithEvents tsmi_ntfi_Scores_Subscribe As Windows.Forms.ToolStripMenuItem
+	Friend WithEvents tsmi_ntfi_Scores_Query As Windows.Forms.ToolStripMenuItem
+	Friend WithEvents tsmi_ntfi_Scores_Best30Query As Windows.Forms.ToolStripMenuItem
+	Friend WithEvents tsmi_ntfi_Scores_Subscribe_Add As Windows.Forms.ToolStripMenuItem
+	Friend WithEvents tsmi_ntfi_Scores_Subscribe_Remove As Windows.Forms.ToolStripMenuItem
+	Friend WithEvents tsmi_ntfi_Scores_Subscribe_ShowList As Windows.Forms.ToolStripMenuItem
+	Friend WithEvents bgwk_AutoUpdate As ComponentModel.BackgroundWorker
 End Class

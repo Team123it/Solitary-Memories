@@ -8,6 +8,7 @@ Imports System.ComponentModel
 Imports System.Threading
 Imports WMPLib
 Imports System.IO
+Imports System.IO.Compression
 
 Public Class Frm_Start
 	Dim ScrollProgress As Short = 0 '当前移动的Tick数,Max=235
@@ -39,17 +40,24 @@ Public Class Frm_Start
 
 	Private Sub Frm_Start_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 		AddHandler StartTimer.Elapsed, AddressOf Tmr_Start_Tick
-		Dim BGMPlaylist As IWMPPlaylist = awmp_Start.playlistCollection.newPlaylist(My.Computer.FileSystem.SpecialDirectories.Temp & "\solimmr_" & Now.Ticks & ".wpl")
-		BGMPlaylist.appendItem(awmp_Start.newMedia(My.Application.Info.DirectoryPath & "\data\resources\Startup_Full.wav"))
-		awmp_Start.currentPlaylist = BGMPlaylist
-		Refresh()
-		FormFade(Me, FadeType.FadeIn)
-		awmp_Start.Ctlcontrols.play()
+		If Not Tag = "sysrun" Then
+			Dim BGMPlaylist As IWMPPlaylist = awmp_Start.playlistCollection.newPlaylist(My.Computer.FileSystem.SpecialDirectories.Temp & "\solimmr_" & Now.Ticks & ".wpl")
+			BGMPlaylist.appendItem(awmp_Start.newMedia(My.Application.Info.DirectoryPath & "\data\resources\Startup_Full.wav"))
+			awmp_Start.currentPlaylist = BGMPlaylist
+			Refresh()
+			FormFade(Me, FadeType.FadeIn)
+			awmp_Start.Ctlcontrols.play()
+		Else
+			Hide()
+			bgwk_Start.RunWorkerAsync()
+		End If
 	End Sub
 
 	Private Sub Frm_Start_Shown(sender As Object, e As EventArgs) Handles MyBase.Shown
-		bgwk_Start.RunWorkerAsync()
-		StartTimer.Start()
+		If Not Tag = "sysrun" Then
+			bgwk_Start.RunWorkerAsync()
+			StartTimer.Start()
+		End If
 	End Sub
 
 	Private Sub ptbx_Start_Click(sender As Object, e As EventArgs) Handles ptbx_Start.Click
@@ -81,6 +89,12 @@ Public Class Frm_Start
 			Threading.Thread.Sleep(500)
 			If [Global].My.MySettings.Default.IsFirstStart Then '如果是首次启动Solitary Memories
 				Invoke(New Action(Sub()
+									  lbl_start.Text = "Unpacking BotArcAPI Data Pack..."
+								  End Sub))
+				Dim BotArcAPIUnpack As String = My.Application.Info.DirectoryPath & "\data\nodejs.zip"
+				Directory.CreateDirectory(My.Application.Info.DirectoryPath & "\nodejs")
+				ZipFile.ExtractToDirectory(BotArcAPIUnpack, My.Application.Info.DirectoryPath & "\nodejs")
+				Invoke(New Action(Sub()
 									  lbl_start.Text = "Loading Main Window Components..."
 								  End Sub))
 				Thread.Sleep(200)
@@ -89,7 +103,8 @@ Public Class Frm_Start
 								  End Sub))
 				FirstStart = True
 				Directory.CreateDirectory(My.Application.Info.DirectoryPath & "\data\players")
-				Directory.CreateDirectory(My.Application.Info.DirectoryPath & "\data\nodejs\node_modules\BotArcAPI")
+				Directory.CreateDirectory(My.Application.Info.DirectoryPath & "\data\subscribes")
+				Directory.CreateDirectory(My.Application.Info.DirectoryPath & "\nodejs")
 				Do Until lbl_start.Location.Y >= 360
 					Threading.Thread.Sleep(15)
 					Invoke(New Action(Sub()
@@ -116,13 +131,23 @@ Public Class Frm_Start
 					Invoke(New Action(Sub()
 										  lbl_start.Text = "Loading Main Window Components..."
 									  End Sub))
-					Do Until lbl_start.Location.Y >= 360
-						Threading.Thread.Sleep(15)
-						Invoke(New Action(Sub()
-											  lbl_start.Location = New Point(lbl_start.Location.X, lbl_start.Location.Y + 1)
-										  End Sub))
-					Loop
 					Initialized = True
+					If Tag = "sysrun" Then
+						Invoke(New Action(Sub()
+											  Dim Main As New Frm_Main
+											  Main.Tag = "sysrun"
+											  Main.Show()
+										  End Sub))
+					Else
+						Dim i As Byte = 0
+						Do Until i > 10
+							Thread.Sleep(15)
+							Invoke(New Action(Sub()
+												  lbl_start.Location = New Point(lbl_start.Location.X, lbl_start.Location.Y + 5)
+											  End Sub))
+							i += 1
+						Loop
+					End If
 					Exit Sub
 				Else
 					Invoke(New Action(Sub()

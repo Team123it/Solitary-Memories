@@ -128,7 +128,7 @@ Public Class Frm_FirstStart
 				Progress = 0
 				Pnl_Step2.Visible = False
 				Pnl_Step1.Visible = False
-				btn_previous.Enabled = False
+				btn_previous.Enabled = True
 				Text = "Solitary Memories 初始化向导 - 第1步,共5步"
 			Case 3 'Step2<-Step3
 				Progress = 2
@@ -254,8 +254,12 @@ Public Class Frm_FirstStart
 			NpmInitialization = Process.Start(NpmInitializationInfo)
 			NpmInitialization.WaitForExit()
 			Dim NpmStdOut As StreamReader = NpmInitialization.StandardOutput
-			NpmConfigPath = NpmStdOut.ReadToEnd() '获取npm配置路径
-			Environment.SetEnvironmentVariable("Path", Environment.GetEnvironmentVariable("Path", EnvironmentVariableTarget.User) & ";" & NpmConfigPath, EnvironmentVariableTarget.User)
+			NpmConfigPath = NpmStdOut.ReadLine() '获取npm配置路径
+			If Environment.GetEnvironmentVariable("Path", EnvironmentVariableTarget.User).EndsWith(";") Then
+				Environment.SetEnvironmentVariable("Path", Environment.GetEnvironmentVariable("Path", EnvironmentVariableTarget.User) & NpmConfigPath, EnvironmentVariableTarget.User)
+			Else
+				Environment.SetEnvironmentVariable("Path", Environment.GetEnvironmentVariable("Path", EnvironmentVariableTarget.User) & ";" & NpmConfigPath, EnvironmentVariableTarget.User)
+			End If
 			'将npm配置路径写入用户环境变量Path中
 			Invoke(New Action(Sub()
 								  lbl_step1_status.Text = "正在初始化 BotArcAPI (Node.js:TypeScript) ……"
@@ -317,7 +321,11 @@ Public Class Frm_FirstStart
 			NpmInitialization.WaitForExit()
 			Dim NpmStdOut As StreamReader = NpmInitialization.StandardOutput
 			Dim NpmConfigPath As String = NpmStdOut.ReadLine() '获取npm配置路径
-			Environment.SetEnvironmentVariable("Path", Environment.GetEnvironmentVariable("Path", EnvironmentVariableTarget.User) & ";" & NpmConfigPath, EnvironmentVariableTarget.User)
+			If Environment.GetEnvironmentVariable("Path", EnvironmentVariableTarget.User).EndsWith(";") Then
+				Environment.SetEnvironmentVariable("Path", Environment.GetEnvironmentVariable("Path", EnvironmentVariableTarget.User) & NpmConfigPath, EnvironmentVariableTarget.User)
+			Else
+				Environment.SetEnvironmentVariable("Path", Environment.GetEnvironmentVariable("Path", EnvironmentVariableTarget.User) & ";" & NpmConfigPath, EnvironmentVariableTarget.User)
+			End If
 			'将npm配置路径写入用户环境变量Path中
 			Invoke(New Action(Sub()
 								  lbl_step1_status.Text = "正在初始化 BotArcAPI (Node.js:TypeScript) ……"

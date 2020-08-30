@@ -76,6 +76,7 @@
       <HintPath>..\packages\System.Data.SQLite.Linq.1.0.113.0\lib\net46\System.Data.SQLite.Linq.dll</HintPath>
     </Reference>
     <Reference Include="System.Drawing" />
+    <Reference Include="System.IO.Compression.FileSystem" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
@@ -107,10 +108,46 @@
     <Compile Include="Frm_Main.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="SubForms\Frm_About.Designer.vb">
+      <DependentUpon>Frm_About.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SubForms\Frm_About.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubForms\Frm_Best30Query.Designer.vb">
+      <DependentUpon>Frm_Best30Query.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SubForms\Frm_Best30Query.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubForms\Frm_SolitaryBoxxx.Designer.vb">
+      <DependentUpon>Frm_SolitaryBoxxx.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SubForms\Frm_SolitaryBoxxx.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubForms\Frm_Options.Designer.vb">
+      <DependentUpon>Frm_Options.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SubForms\Frm_Options.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubForms\Frm_PlayersManager.Designer.vb">
+      <DependentUpon>Frm_PlayersManager.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SubForms\Frm_PlayersManager.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Frm_Start.Designer.vb">
       <DependentUpon>Frm_Start.vb</DependentUpon>
     </Compile>
     <Compile Include="Frm_Start.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubForms\Frm_SubScribesList.Designer.vb">
+      <DependentUpon>Frm_SubScribesList.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SubForms\Frm_SubScribesList.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -142,8 +179,26 @@
     <EmbeddedResource Include="Frm_Main.resx">
       <DependentUpon>Frm_Main.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="SubForms\Frm_About.resx">
+      <DependentUpon>Frm_About.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubForms\Frm_Best30Query.resx">
+      <DependentUpon>Frm_Best30Query.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubForms\Frm_SolitaryBoxxx.resx">
+      <DependentUpon>Frm_SolitaryBoxxx.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubForms\Frm_Options.resx">
+      <DependentUpon>Frm_Options.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubForms\Frm_PlayersManager.resx">
+      <DependentUpon>Frm_PlayersManager.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Frm_Start.resx">
       <DependentUpon>Frm_Start.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubForms\Frm_SubScribesList.resx">
+      <DependentUpon>Frm_SubScribesList.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>PublicVbMyResourcesResXFileCodeGenerator</Generator>

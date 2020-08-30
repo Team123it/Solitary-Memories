@@ -117,7 +117,400 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="lbl_ifmt.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="lbl_ifmt.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 9</value>
+  </data>
+  <data name="lbl_ifmt.Size" type="System.Drawing.Size, System.Drawing">
+    <value>83, 12</value>
+  </data>
+  <data name="lbl_ifmt.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="lbl_ifmt.Text" xml:space="preserve">
+    <value>要查询的玩家:</value>
+  </data>
+  <data name="&gt;&gt;lbl_ifmt.Name" xml:space="preserve">
+    <value>lbl_ifmt</value>
+  </data>
+  <data name="&gt;&gt;lbl_ifmt.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lbl_ifmt.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lbl_ifmt.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="cbb_playersList.Items" xml:space="preserve">
+    <value>(手动输入id)</value>
+  </data>
+  <data name="cbb_playersList.Location" type="System.Drawing.Point, System.Drawing">
+    <value>101, 6</value>
+  </data>
+  <data name="cbb_playersList.Size" type="System.Drawing.Size, System.Drawing">
+    <value>121, 20</value>
+  </data>
+  <data name="cbb_playersList.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="cbb_playersList.Text" xml:space="preserve">
+    <value>(手动输入id)</value>
+  </data>
+  <data name="&gt;&gt;cbb_playersList.Name" xml:space="preserve">
+    <value>cbb_playersList</value>
+  </data>
+  <data name="&gt;&gt;cbb_playersList.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbb_playersList.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;cbb_playersList.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="tbx_playerId.Location" type="System.Drawing.Point, System.Drawing">
+    <value>306, 5</value>
+  </data>
+  <data name="tbx_playerId.MaxLength" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="tbx_playerId.Size" type="System.Drawing.Size, System.Drawing">
+    <value>112, 21</value>
+  </data>
+  <data name="tbx_playerId.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;tbx_playerId.Name" xml:space="preserve">
+    <value>tbx_playerId</value>
+  </data>
+  <data name="&gt;&gt;tbx_playerId.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tbx_playerId.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;tbx_playerId.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="lbl_ifmt2.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lbl_ifmt2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>244, 9</value>
+  </data>
+  <data name="lbl_ifmt2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>47, 12</value>
+  </data>
+  <data name="lbl_ifmt2.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="lbl_ifmt2.Text" xml:space="preserve">
+    <value>玩家id:</value>
+  </data>
+  <data name="&gt;&gt;lbl_ifmt2.Name" xml:space="preserve">
+    <value>lbl_ifmt2</value>
+  </data>
+  <data name="&gt;&gt;lbl_ifmt2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lbl_ifmt2.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lbl_ifmt2.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="lbl_ifmt3.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lbl_ifmt3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 42</value>
+  </data>
+  <data name="lbl_ifmt3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>35, 12</value>
+  </data>
+  <data name="lbl_ifmt3.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="lbl_ifmt3.Text" xml:space="preserve">
+    <value>曲目:</value>
+  </data>
+  <data name="&gt;&gt;lbl_ifmt3.Name" xml:space="preserve">
+    <value>lbl_ifmt3</value>
+  </data>
+  <data name="&gt;&gt;lbl_ifmt3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lbl_ifmt3.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lbl_ifmt3.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="cbb_selectedSong.Location" type="System.Drawing.Point, System.Drawing">
+    <value>53, 39</value>
+  </data>
+  <data name="cbb_selectedSong.Size" type="System.Drawing.Size, System.Drawing">
+    <value>238, 20</value>
+  </data>
+  <data name="cbb_selectedSong.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="cbb_selectedSong.Text" xml:space="preserve">
+    <value>(未选择)</value>
+  </data>
+  <data name="&gt;&gt;cbb_selectedSong.Name" xml:space="preserve">
+    <value>cbb_selectedSong</value>
+  </data>
+  <data name="&gt;&gt;cbb_selectedSong.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbb_selectedSong.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;cbb_selectedSong.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="lbl_ifmt4.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lbl_ifmt4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>304, 42</value>
+  </data>
+  <data name="lbl_ifmt4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>35, 12</value>
+  </data>
+  <data name="lbl_ifmt4.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="lbl_ifmt4.Text" xml:space="preserve">
+    <value>难度:</value>
+  </data>
+  <data name="&gt;&gt;lbl_ifmt4.Name" xml:space="preserve">
+    <value>lbl_ifmt4</value>
+  </data>
+  <data name="&gt;&gt;lbl_ifmt4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lbl_ifmt4.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lbl_ifmt4.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="cbb_Difficulty.AutoCompleteCustomSource" xml:space="preserve">
+    <value>Past</value>
+  </data>
+  <data name="cbb_Difficulty.AutoCompleteCustomSource1" xml:space="preserve">
+    <value>Present</value>
+  </data>
+  <data name="cbb_Difficulty.AutoCompleteCustomSource2" xml:space="preserve">
+    <value>Future</value>
+  </data>
+  <data name="cbb_Difficulty.AutoCompleteCustomSource3" xml:space="preserve">
+    <value>Beyond</value>
+  </data>
+  <data name="cbb_Difficulty.Items" xml:space="preserve">
+    <value>Past</value>
+  </data>
+  <data name="cbb_Difficulty.Items1" xml:space="preserve">
+    <value>Present</value>
+  </data>
+  <data name="cbb_Difficulty.Items2" xml:space="preserve">
+    <value>Future</value>
+  </data>
+  <data name="cbb_Difficulty.Items3" xml:space="preserve">
+    <value>Beyond</value>
+  </data>
+  <data name="cbb_Difficulty.Location" type="System.Drawing.Point, System.Drawing">
+    <value>345, 39</value>
+  </data>
+  <data name="cbb_Difficulty.Size" type="System.Drawing.Size, System.Drawing">
+    <value>121, 20</value>
+  </data>
+  <data name="cbb_Difficulty.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="cbb_Difficulty.Text" xml:space="preserve">
+    <value>(未选择)</value>
+  </data>
+  <data name="&gt;&gt;cbb_Difficulty.Name" xml:space="preserve">
+    <value>cbb_Difficulty</value>
+  </data>
+  <data name="&gt;&gt;cbb_Difficulty.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbb_Difficulty.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;cbb_Difficulty.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="btn_goQuery.Location" type="System.Drawing.Point, System.Drawing">
+    <value>493, 37</value>
+  </data>
+  <data name="btn_goQuery.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="btn_goQuery.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="btn_goQuery.Text" xml:space="preserve">
+    <value>开查(&amp;G)!</value>
+  </data>
+  <data name="&gt;&gt;btn_goQuery.Name" xml:space="preserve">
+    <value>btn_goQuery</value>
+  </data>
+  <data name="&gt;&gt;btn_goQuery.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btn_goQuery.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btn_goQuery.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;btn_copyRaw.Name" xml:space="preserve">
+    <value>btn_copyRaw</value>
+  </data>
+  <data name="&gt;&gt;btn_copyRaw.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btn_copyRaw.Parent" xml:space="preserve">
+    <value>gbx_queryResult</value>
+  </data>
+  <data name="&gt;&gt;btn_copyRaw.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;tbx_result.Name" xml:space="preserve">
+    <value>tbx_result</value>
+  </data>
+  <data name="&gt;&gt;tbx_result.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tbx_result.Parent" xml:space="preserve">
+    <value>gbx_queryResult</value>
+  </data>
+  <data name="&gt;&gt;tbx_result.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="gbx_queryResult.Location" type="System.Drawing.Point, System.Drawing">
+    <value>14, 65</value>
+  </data>
+  <data name="gbx_queryResult.Size" type="System.Drawing.Size, System.Drawing">
+    <value>565, 177</value>
+  </data>
+  <data name="gbx_queryResult.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="gbx_queryResult.Text" xml:space="preserve">
+    <value>查询结果</value>
+  </data>
+  <data name="&gt;&gt;gbx_queryResult.Name" xml:space="preserve">
+    <value>gbx_queryResult</value>
+  </data>
+  <data name="&gt;&gt;gbx_queryResult.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;gbx_queryResult.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;gbx_queryResult.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="btn_copyRaw.Location" type="System.Drawing.Point, System.Drawing">
+    <value>425, 20</value>
+  </data>
+  <data name="btn_copyRaw.Size" type="System.Drawing.Size, System.Drawing">
+    <value>111, 23</value>
+  </data>
+  <data name="btn_copyRaw.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="btn_copyRaw.Text" xml:space="preserve">
+    <value>复制原数据(&amp;C)</value>
+  </data>
+  <data name="&gt;&gt;btn_copyRaw.Name" xml:space="preserve">
+    <value>btn_copyRaw</value>
+  </data>
+  <data name="&gt;&gt;btn_copyRaw.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btn_copyRaw.Parent" xml:space="preserve">
+    <value>gbx_queryResult</value>
+  </data>
+  <data name="&gt;&gt;btn_copyRaw.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="tbx_result.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="tbx_result.Font" type="System.Drawing.Font, System.Drawing">
+    <value>宋体, 11pt</value>
+  </data>
+  <data name="tbx_result.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 17</value>
+  </data>
+  <data name="tbx_result.Multiline" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="tbx_result.ScrollBars" type="System.Windows.Forms.ScrollBars, System.Windows.Forms">
+    <value>Vertical</value>
+  </data>
+  <data name="tbx_result.Size" type="System.Drawing.Size, System.Drawing">
+    <value>559, 157</value>
+  </data>
+  <data name="tbx_result.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="&gt;&gt;tbx_result.Name" xml:space="preserve">
+    <value>tbx_result</value>
+  </data>
+  <data name="&gt;&gt;tbx_result.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tbx_result.Parent" xml:space="preserve">
+    <value>gbx_queryResult</value>
+  </data>
+  <data name="&gt;&gt;tbx_result.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
   <metadata name="bgwk_ScoreQuery.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 12</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>591, 254</value>
+  </data>
+  <data name="$this.MaximumSize" type="System.Drawing.Size, System.Drawing">
+    <value>607, 293</value>
+  </data>
+  <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>607, 293</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>成绩查询</value>
+  </data>
+  <data name="&gt;&gt;bgwk_ScoreQuery.Name" xml:space="preserve">
+    <value>bgwk_ScoreQuery</value>
+  </data>
+  <data name="&gt;&gt;bgwk_ScoreQuery.Type" xml:space="preserve">
+    <value>System.ComponentModel.BackgroundWorker, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>Frm_ScoreQuery</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
 </root>

@@ -9,6 +9,8 @@ Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Solitary Memories Global Li
 EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Solitary Memories UI Library", "Solitary Memories UI Library\Solitary Memories UI Library.vbproj", "{412E6B0F-E051-41F9-9D0A-C0258B717773}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Solitary Memories Setup", "Solitary Memories Setup\Solitary Memories Setup.vdproj", "{689FBC00-D08D-4FF1-96F2-3E5F5DA73D03}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,8 @@ Global
 		{412E6B0F-E051-41F9-9D0A-C0258B717773}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{412E6B0F-E051-41F9-9D0A-C0258B717773}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{412E6B0F-E051-41F9-9D0A-C0258B717773}.Release|Any CPU.Build.0 = Release|Any CPU
+		{689FBC00-D08D-4FF1-96F2-3E5F5DA73D03}.Debug|Any CPU.ActiveCfg = Debug
+		{689FBC00-D08D-4FF1-96F2-3E5F5DA73D03}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

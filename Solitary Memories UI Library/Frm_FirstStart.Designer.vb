@@ -30,6 +30,8 @@ Partial Class Frm_FirstStart
 		Me.Pnl_Step2 = New System.Windows.Forms.Panel()
 		Me.Pnl_Step3 = New System.Windows.Forms.Panel()
 		Me.Pnl_Finish = New System.Windows.Forms.Panel()
+		Me.lbl_Finish_ifmt = New System.Windows.Forms.Label()
+		Me.lbl_Finish = New System.Windows.Forms.Label()
 		Me.btn_Step3_ImportAccountList = New System.Windows.Forms.Button()
 		Me.btn_Step3_ManualAdd = New System.Windows.Forms.Button()
 		Me.lbl_Step3_AccountsCount = New System.Windows.Forms.Label()
@@ -55,8 +57,6 @@ Partial Class Frm_FirstStart
 		Me.btn_next = New System.Windows.Forms.Button()
 		Me.ttp_Step2_RunningPort = New System.Windows.Forms.ToolTip(Me.components)
 		Me.ofd_Step2_ImportAccountsList = New System.Windows.Forms.OpenFileDialog()
-		Me.lbl_Finish = New System.Windows.Forms.Label()
-		Me.lbl_Finish_ifmt = New System.Windows.Forms.Label()
 		Me.bgwk_Step1_CheckUpdate = New System.ComponentModel.BackgroundWorker()
 		CType(Me.Spc_FirstStart, System.ComponentModel.ISupportInitialize).BeginInit()
 		Me.Spc_FirstStart.Panel1.SuspendLayout()
@@ -154,6 +154,25 @@ Partial Class Frm_FirstStart
 		Me.Pnl_Finish.Name = "Pnl_Finish"
 		Me.Pnl_Finish.Size = New System.Drawing.Size(647, 257)
 		Me.Pnl_Finish.TabIndex = 2
+		'
+		'lbl_Finish_ifmt
+		'
+		Me.lbl_Finish_ifmt.AutoSize = True
+		Me.lbl_Finish_ifmt.Location = New System.Drawing.Point(16, 39)
+		Me.lbl_Finish_ifmt.Name = "lbl_Finish_ifmt"
+		Me.lbl_Finish_ifmt.Size = New System.Drawing.Size(347, 36)
+		Me.lbl_Finish_ifmt.TabIndex = 1
+		Me.lbl_Finish_ifmt.Text = "您已完成 Solitary Memories 初始化向导。" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "单击""完成(&F)""重新启动程序以便开始使用 Solitary Memories。"
+		'
+		'lbl_Finish
+		'
+		Me.lbl_Finish.AutoSize = True
+		Me.lbl_Finish.Font = New System.Drawing.Font("宋体", 15.0!)
+		Me.lbl_Finish.Location = New System.Drawing.Point(14, 9)
+		Me.lbl_Finish.Name = "lbl_Finish"
+		Me.lbl_Finish.Size = New System.Drawing.Size(49, 20)
+		Me.lbl_Finish.TabIndex = 1
+		Me.lbl_Finish.Text = "完成"
 		'
 		'btn_Step3_ImportAccountList
 		'
@@ -383,25 +402,6 @@ Partial Class Frm_FirstStart
 		Me.ofd_Step2_ImportAccountsList.Filter = "文本文件(*.txt)|*.txt"
 		Me.ofd_Step2_ImportAccountsList.Title = "选择 123 ArcAccGenerator 生成的账号文本文件"
 		'
-		'lbl_Finish
-		'
-		Me.lbl_Finish.AutoSize = True
-		Me.lbl_Finish.Font = New System.Drawing.Font("宋体", 15.0!)
-		Me.lbl_Finish.Location = New System.Drawing.Point(14, 9)
-		Me.lbl_Finish.Name = "lbl_Finish"
-		Me.lbl_Finish.Size = New System.Drawing.Size(49, 20)
-		Me.lbl_Finish.TabIndex = 1
-		Me.lbl_Finish.Text = "完成"
-		'
-		'lbl_Finish_ifmt
-		'
-		Me.lbl_Finish_ifmt.AutoSize = True
-		Me.lbl_Finish_ifmt.Location = New System.Drawing.Point(16, 39)
-		Me.lbl_Finish_ifmt.Name = "lbl_Finish_ifmt"
-		Me.lbl_Finish_ifmt.Size = New System.Drawing.Size(347, 36)
-		Me.lbl_Finish_ifmt.TabIndex = 1
-		Me.lbl_Finish_ifmt.Text = "您已完成 Solitary Memories 初始化向导。" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "单击""完成(&F)""重新启动程序以便开始使用 Solitary Memories。"
-		'
 		'bgwk_Step1_CheckUpdate
 		'
 		Me.bgwk_Step1_CheckUpdate.WorkerSupportsCancellation = True
@@ -413,6 +413,8 @@ Partial Class Frm_FirstStart
 		Me.ClientSize = New System.Drawing.Size(647, 294)
 		Me.Controls.Add(Me.Spc_FirstStart)
 		Me.MaximizeBox = False
+		Me.MaximumSize = New System.Drawing.Size(663, 333)
+		Me.MinimumSize = New System.Drawing.Size(663, 333)
 		Me.Name = "Frm_FirstStart"
 		Me.ShowIcon = False
 		Me.Text = "Solitary Memories 初始化向导"

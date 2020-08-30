@@ -8,8 +8,16 @@ Imports Newtonsoft.Json.Linq
 Imports System.Windows.Forms
 
 Public Class Frm_ScoreQuery
+	Public Const Best30UnlockSong1 As String = "goodtek" '[初始曲包]GOODTEK(Arcaea Edit) [FTR 9](BYD不推进解锁进度)
+	Public Const Best30UnlockSong2 As String = "lostcivilization" '[初始曲包]Lost Civilization [FTR 9]
+	Public Const Best30UnlockSong3 As String = "faintlight" '[World Extend]Faint Light(Arcaea Edit) [FTR 9]
+	Public Const Best30UnlockSong4 As String = "auxesia" '[回忆档案馆]Auxesia [FTR 9]
+	Public Const Best30UnlockSong5 As String = "particlearts" '[Adverse Prelude]Particle Arts [FTR 8]
+	Public Const Best30UnlockSong6 As String = "mazenine" '[Luminous Sky]九番目の迷路(Maze No.9) [FTR 8]
+	Public Const Best30UnlockSong7 As String = "nexttoyou" '[Binary Enfold]Next to you [FTR 8]
 	Dim Null As JToken
 	Dim RawJsonStr As String
+	Dim Best30UnlockProcess As Byte = 0
 	Private Sub Frm_ScoreQuery_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 		For Each Player In Directory.GetFiles(PlayersPath) '遍历添加存储的玩家信息
 			cbb_playersList.Items.Add(Split(Player, "\", Compare:=CompareMethod.Text)(Split(Player, "\", Compare:=CompareMethod.Text).Length - 1))
@@ -31,7 +39,23 @@ Public Class Frm_ScoreQuery
 		ArcSongDataAdapter.Dispose()
 		ArcSongCmd.Dispose()
 		ArcSongConnection.Close()
+	End Sub
 
+	Private Sub CheckBest30UnlockProgress()
+		If Best30UnlockProcess = 7 Then
+			Invoke(New Action(Sub()
+								  MsgBox("All EX+ Level Reached" & vbCrLf &
+									 "--OPENED--", 0, "Notice")
+								  If MsgBox("进入该模式后,玩家信息将被固定为当前被查分玩家信息,结束前无法退出该模式" & vbCrLf &
+											"且将会消耗所有的Unlock Progress" & vbCrLf &
+											"是否继续?", vbYesNo + vbExclamation, "警告") = vbYes Then
+									  Best30UnlockProcess = 0
+									  Dim SolitaryBoxxx As New Frm_SolitaryBoxxx With {
+										.PlayerId = tbx_playerId.Text}
+									  SolitaryBoxxx.ShowDialog()
+								  End If
+							  End Sub))
+		End If
 	End Sub
 
 	Private Sub Cbb_playersList_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbb_playersList.SelectedIndexChanged
@@ -113,7 +137,8 @@ Public Class Frm_ScoreQuery
 						Case 3 : DiffStr = "Beyond "
 						Case Else : DiffStr = "Unknown "
 					End Select
-					Dim SongApiUrl As String = $"http://127.0.0.1:{[Global].My.MySettings.Default.APIPort}/v2/songinfo?songname={ResultContent.Value(Of String)("song_id")}"
+					Dim SongId As String = ResultContent.Value(Of String)("song_id")
+					Dim SongApiUrl As String = $"http://127.0.0.1:{[Global].My.MySettings.Default.APIPort}/v2/songinfo?songname={SongId}"
 					Dim SongData As JObject = GetAPIReturnJson(SongApiUrl, Encoding.UTF8).Value(Of JObject)("content")
 					If SongData.Value(Of JObject)("title_localized").TryGetValue("ja", Null) Then
 						SongName = SongData.Value(Of JObject)("title_localized").Value(Of String)("ja")
@@ -186,6 +211,82 @@ Public Class Frm_ScoreQuery
 						Append("Lost: ").Append(LostCount).Append(vbCrLf).
 						Append("Potential: ").Append(Rating.ToString("#0.000")).Append(vbCrLf).
 						Append("游玩日期: ").Append(Format(PlayDate, "yyyy-MM-dd HH:mm:ss"))
+					If Not [Global].My.MySettings.Default.IsBest30FunctionUnlocked Then
+						Select Case SongId
+							Case Best30UnlockSong1
+								If Best30UnlockProcess = 0 Then '如果进度是0
+									If (DiffStr.Trim.ToLower.StartsWith("future")) AndAlso (Score >= 9800000) Then '如果查询的是FTR难度且达成EX+等级
+										Best30UnlockProcess += 1
+									Else '进度清零
+										Best30UnlockProcess = 0
+									End If
+								Else '否则(进度清零)
+									Best30UnlockProcess = 0
+								End If
+							Case Best30UnlockSong2
+								If Best30UnlockProcess = 1 Then '如果进度是1
+									If (DiffStr.Trim.ToLower.StartsWith("future")) AndAlso (Score >= 9900000) Then '如果查询的是FTR难度且达成EX+等级
+										Best30UnlockProcess += 1
+									Else '进度清零
+										Best30UnlockProcess = 0
+									End If
+								Else '否则(进度清零)
+									Best30UnlockProcess = 0
+								End If
+							Case Best30UnlockSong3
+								If Best30UnlockProcess = 2 Then '如果进度是2
+									If (DiffStr.Trim.ToLower.StartsWith("future")) AndAlso (Score >= 9900000) Then '如果查询的是FTR难度且达成EX+等级
+										Best30UnlockProcess += 1
+									Else '进度清零
+										Best30UnlockProcess = 0
+									End If
+								Else '否则(进度清零)
+									Best30UnlockProcess = 0
+								End If
+							Case Best30UnlockSong4
+								If Best30UnlockProcess = 3 Then '如果进度是3
+									If (DiffStr.Trim.ToLower.StartsWith("future")) AndAlso (Score >= 9900000) Then '如果查询的是FTR难度且达成EX+等级
+										Best30UnlockProcess += 1
+									Else '进度清零
+										Best30UnlockProcess = 0
+									End If
+								Else '否则(进度清零)
+									Best30UnlockProcess = 0
+								End If
+							Case Best30UnlockSong5
+								If Best30UnlockProcess = 4 Then '如果进度是4
+									If (DiffStr.Trim.ToLower.StartsWith("future")) AndAlso (Score >= 9900000) Then '如果查询的是FTR难度且达成EX+等级
+										Best30UnlockProcess += 1
+									Else '进度清零
+										Best30UnlockProcess = 0
+									End If
+								Else '否则(进度清零)
+									Best30UnlockProcess = 0
+								End If
+							Case Best30UnlockSong6
+								If Best30UnlockProcess = 5 Then '如果进度是5
+									If (DiffStr.Trim.ToLower.StartsWith("future")) AndAlso (Score >= 9900000) Then '如果查询的是FTR难度且达成EX+等级
+										Best30UnlockProcess += 1
+									Else '进度清零
+										Best30UnlockProcess = 0
+									End If
+								Else '否则(进度清零)
+									Best30UnlockProcess = 0
+								End If
+							Case Best30UnlockSong7
+								If Best30UnlockProcess = 6 Then '如果进度是6
+									If (DiffStr.Trim.ToLower.StartsWith("future")) AndAlso (Score >= 9900000) Then '如果查询的是FTR难度且达成EX+等级
+										Best30UnlockProcess += 1
+									Else '进度清零
+										Best30UnlockProcess = 0
+									End If
+								Else '否则(进度清零)
+									Best30UnlockProcess = 0
+								End If
+							Case Else '查的是其它歌曲(进度清零)
+								Best30UnlockProcess = 0
+						End Select
+					End If
 				Case -1 'invalid usercode
 					ResultBuilder.Append("错误:无效的玩家id(-1)")
 				Case -2 'invalid songname
@@ -221,6 +322,7 @@ Public Class Frm_ScoreQuery
 			Invoke(New Action(Sub()
 								  tbx_result.Text = ResultBuilder.ToString
 							  End Sub))
+			Call CheckBest30UnlockProgress()
 #End Region
 		Catch ex As Exception
 			Invoke(New Action(Sub()

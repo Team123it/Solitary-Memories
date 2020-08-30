@@ -79,6 +79,9 @@ Public Module Globals
 				.WindowStyle = ProcessWindowStyle.Hidden,
 				.CreateNoWindow = True
 			}
+				If My.MySettings.Default.IsDebugModeOn Then
+					BotArcAPIStartInfo.CreateNoWindow = False
+				End If
 				_BotArcAPI = Process.Start(BotArcAPIStartInfo)
 				Do
 					Dim CurrentString As String = _BotArcAPI.StandardOutput.ReadLine()

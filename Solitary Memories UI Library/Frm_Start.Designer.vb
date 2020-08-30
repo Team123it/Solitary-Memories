@@ -122,6 +122,7 @@ Partial Class Frm_Start
 		Me.MaximizeBox = False
 		Me.MaximumSize = New System.Drawing.Size(640, 360)
 		Me.MinimumSize = New System.Drawing.Size(640, 360)
+		Me.Icon = My.Resources.icon
 		Me.Name = "Frm_Start"
 		Me.ShowIcon = False
 		Me.ShowInTaskbar = False

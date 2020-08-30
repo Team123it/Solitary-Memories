@@ -89,6 +89,66 @@ Namespace My
                 Me("QueryFrequency") = value
             End Set
         End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("True")>  _
+        Public Property IsCheckPlayerInfoBeforeAdd() As Boolean
+            Get
+                Return CType(Me("IsCheckPlayerInfoBeforeAdd"),Boolean)
+            End Get
+            Set
+                Me("IsCheckPlayerInfoBeforeAdd") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property IsSystemAutoStart() As Boolean
+            Get
+                Return CType(Me("IsSystemAutoStart"),Boolean)
+            End Get
+            Set
+                Me("IsSystemAutoStart") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property IsCheckUpdateOnStart() As Boolean
+            Get
+                Return CType(Me("IsCheckUpdateOnStart"),Boolean)
+            End Get
+            Set
+                Me("IsCheckUpdateOnStart") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property IsBest30FunctionUnlocked() As Boolean
+            Get
+                Return CType(Me("IsBest30FunctionUnlocked"),Boolean)
+            End Get
+            Set
+                Me("IsBest30FunctionUnlocked") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property IsDebugModeOn() As Boolean
+            Get
+                Return CType(Me("IsDebugModeOn"),Boolean)
+            End Get
+            Set
+                Me("IsDebugModeOn") = value
+            End Set
+        End Property
     End Class
 End Namespace
 
