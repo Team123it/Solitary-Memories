@@ -136,6 +136,7 @@ Public Class Frm_Main
 		Do
 			Dim NewSubScribePlayer As String = InputBox("请输入要添加的订阅的对应玩家昵称(若已添加该玩家信息)或玩家id(必须是9位数字)", "添加新成绩订阅")
 			If IsNumeric(NewSubScribePlayer) Then
+				Exit Do
 			ElseIf NewSubScribePlayer <> Nothing Then
 				If File.Exists(PlayersPath & "\" & NewSubScribePlayer) Then
 					NewSubScribePlayerId = File.ReadAllText(PlayersPath & "\" & NewSubScribePlayer, Encoding.UTF8)
@@ -488,7 +489,7 @@ Public Class Frm_Main
 	End Sub
 
 	Private Sub Tsmi_ntfi_ShowMain_Click(sender As Object, e As EventArgs) Handles tsmi_ntfi_ShowMain.Click
-		MainBGMBuffer.Restore()
+		MainBGMBuffer.Play(0, BufferPlayFlags.Looping)
 		Show()
 	End Sub
 

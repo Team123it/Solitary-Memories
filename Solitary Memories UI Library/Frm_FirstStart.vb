@@ -130,10 +130,12 @@ Public Class Frm_FirstStart
 				Pnl_Step1.Visible = False
 				btn_previous.Enabled = True
 				Text = "Solitary Memories 初始化向导 - 第1步,共5步"
+				btn_next.Enabled = True
 			Case 3 'Step2<-Step3
 				Progress = 2
 				Pnl_Step3.Visible = False
 				Text = "Solitary Memories 初始化向导 - 第3步,共5步"
+				btn_next.Enabled = True
 			Case 4 'Step3<-Finish
 				Progress = 3
 				Pnl_Finish.Visible = False
@@ -243,8 +245,14 @@ Public Class Frm_FirstStart
 								  lbl_step1_status.Text = "正在初始化 BotArcAPI (Node.js:npm) ……"
 								  lbl_step1_status.Refresh()
 							  End Sub))
+			If Environment.GetEnvironmentVariable("Path", EnvironmentVariableTarget.User).EndsWith(";") Then
+				Environment.SetEnvironmentVariable("Path", Environment.GetEnvironmentVariable("Path", EnvironmentVariableTarget.User) & My.Application.Info.DirectoryPath & "\nodejs", EnvironmentVariableTarget.User)
+			Else
+				Environment.SetEnvironmentVariable("Path", Environment.GetEnvironmentVariable("Path", EnvironmentVariableTarget.User) & ";" & My.Application.Info.DirectoryPath & "\nodejs", EnvironmentVariableTarget.User)
+			End If
 			Dim NpmInitialization As Process
-			Dim NpmInitializationInfo As New ProcessStartInfo("npm.cmd", "config get prefix") With {
+			Dim NpmInitializationInfo As New ProcessStartInfo(My.Application.Info.DirectoryPath & "\nodejs\npm.cmd") With {
+					.Arguments = "config get prefix",
 					.WorkingDirectory = My.Application.Info.DirectoryPath & "\nodejs",
 					.CreateNoWindow = True,
 					.UseShellExecute = False,
@@ -252,9 +260,9 @@ Public Class Frm_FirstStart
 					.RedirectStandardOutput = True
 				}
 			NpmInitialization = Process.Start(NpmInitializationInfo)
-			NpmInitialization.WaitForExit()
 			Dim NpmStdOut As StreamReader = NpmInitialization.StandardOutput
-			NpmConfigPath = NpmStdOut.ReadLine() '获取npm配置路径
+			NpmConfigPath = NpmStdOut.ReadLine()
+			NpmInitialization.Kill()
 			If Environment.GetEnvironmentVariable("Path", EnvironmentVariableTarget.User).EndsWith(";") Then
 				Environment.SetEnvironmentVariable("Path", Environment.GetEnvironmentVariable("Path", EnvironmentVariableTarget.User) & NpmConfigPath, EnvironmentVariableTarget.User)
 			Else

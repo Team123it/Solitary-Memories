@@ -33,6 +33,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_3D82C18821224329A5056FC49420FB11"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_5D27CAB5842F7E68B56E35A72FEB13AD"
         "OwnerKey" = "8:_602B8CEBABD6F422E37709E0B69DFE83"
         "MsmSig" = "8:_UNDEFINED"
@@ -118,13 +124,13 @@
         "Entry"
         {
         "MsmKey" = "8:_DC5CB074C6290800126436416AA8F641"
-        "OwnerKey" = "8:_AEBBD6CBC88701AE20D656CEADF909D5"
+        "OwnerKey" = "8:_E07264370BE4716D52E4D40C24D5C20D"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_DC5CB074C6290800126436416AA8F641"
-        "OwnerKey" = "8:_E07264370BE4716D52E4D40C24D5C20D"
+        "OwnerKey" = "8:_AEBBD6CBC88701AE20D656CEADF909D5"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -154,12 +160,6 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_E07264370BE4716D52E4D40C24D5C20D"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_CEB00FAE9C984C79B044F2F291310A0D"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -173,12 +173,6 @@
         {
         "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_9735835B500D4E2A49D251E828D8D4C1"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_DC5CB074C6290800126436416AA8F641"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -217,6 +211,18 @@
         "OwnerKey" = "8:_9EC548D8809881E2F6D37AEA945D4F25"
         "MsmSig" = "8:_UNDEFINED"
         }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_E07264370BE4716D52E4D40C24D5C20D"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_DC5CB074C6290800126436416AA8F641"
+        "MsmSig" = "8:_UNDEFINED"
+        }
     }
     "Configurations"
     {
@@ -235,6 +241,14 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+            }
         }
         "Release"
         {
@@ -251,6 +265,14 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+            }
         }
     }
     "Deployable"
@@ -360,6 +382,26 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_3D82C18821224329A5056FC49420FB11"
+            {
+            "SourcePath" = "8:F:\\Java\\$Exes(Program Executable Files)\\123ArcAccGenerator.exe"
+            "TargetName" = "8:123ArcAccGenerator.exe"
+            "Tag" = "8:"
+            "Folder" = "8:_9AFD9214507D44B3B1D14701E6F0C0D2"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_5D27CAB5842F7E68B56E35A72FEB13AD"
@@ -839,6 +881,17 @@
                             }
                         }
                     }
+                    "{9EF0B969-E518-4E46-987F-47570745A589}:_9AFD9214507D44B3B1D14701E6F0C0D2"
+                    {
+                    "Name" = "8:bin"
+                    "AlwaysCreate" = "11:FALSE"
+                    "Condition" = "8:"
+                    "Transitive" = "11:FALSE"
+                    "Property" = "8:_D287CFEFB06049A1800FEA24A08E8CB5"
+                        "Folders"
+                        {
+                        }
+                    }
                 }
             }
             "{1525181F-901A-416C-8A58-119130FE478E}:_96B354B27BED45E6A3A8186F76673A90"
@@ -901,7 +954,7 @@
         "ARPIconIndex" = "3:0"
         "SearchPath" = "8:"
         "UseSystemSearchPath" = "11:TRUE"
-        "TargetPlatform" = "3:0"
+        "TargetPlatform" = "3:1"
         "PreBuildEvent" = "8:"
         "PostBuildEvent" = "8:"
         "RunPostBuildEvent" = "3:0"
