@@ -66,20 +66,33 @@
     <PlatformTarget>x64</PlatformTarget>
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DocumentationFile>solimmr_ui.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DocumentationFile>solimmr_ui.xml</DocumentationFile>
+    <Optimize>true</Optimize>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.3.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.3.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.DirectX, Version=1.0.2902.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>D:\Program Files (x86)\Microsoft DirectX SDK (March 2008)\Developer Runtime\x86\DirectX for Managed Code\Microsoft.DirectX.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.DirectX.DirectSound, Version=1.0.2902.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>D:\Program Files (x86)\Microsoft DirectX SDK (March 2008)\Developer Runtime\x86\DirectX for Managed Code\Microsoft.DirectX.DirectSound.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
@@ -133,6 +146,12 @@
       <DependentUpon>Frm_About.vb</DependentUpon>
     </Compile>
     <Compile Include="SubForms\Frm_About.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubForms\Frm_AnomalyFuncUnlock.Designer.vb">
+      <DependentUpon>Frm_AnomalyFuncUnlock.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SubForms\Frm_AnomalyFuncUnlock.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="SubForms\Frm_Best30Query.Designer.vb">
@@ -202,6 +221,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SubForms\Frm_About.resx">
       <DependentUpon>Frm_About.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubForms\Frm_AnomalyFuncUnlock.resx">
+      <DependentUpon>Frm_AnomalyFuncUnlock.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SubForms\Frm_Best30Query.resx">
       <DependentUpon>Frm_Best30Query.vb</DependentUpon>

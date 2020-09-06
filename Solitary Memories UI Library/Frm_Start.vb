@@ -6,7 +6,6 @@ Imports System.Net
 Imports System.Environment
 Imports System.ComponentModel
 Imports System.Threading
-Imports WMPLib
 Imports System.IO
 Imports System.IO.Compression
 
@@ -17,6 +16,7 @@ Public Class Frm_Start
 	Dim Initialized As Boolean = False
 	Dim StartTimer As New Timers.Timer(1)
 	Dim FirstStart As Boolean = False
+	Dim ThisTimer As New Timers.Timer(1000)
 
 	Private Sub Tmr_Start_Tick(sender As Object, e As EventArgs)
 		If NowY <= -492.5 Then
@@ -24,13 +24,13 @@ Public Class Frm_Start
 				Exit Sub
 			End If
 		End If
-		If (awmp_Start.Ctlcontrols.currentPosition <= 0.0000) Then
+		If awmp_Start.Ctlcontrols.currentPosition <= 0.0000 Then
 			Exit Sub
 		End If
-		If (awmp_Start.Ctlcontrols.currentPosition < 12.43) Then '如果没到最后一个Tick
+		If awmp_Start.Ctlcontrols.currentPosition < 12.43 Then '如果没到最后一个Tick
 			NowY = NowY - MovePerTick
 			ptbx_Start.Location = New Point(0, NowY)
-		ElseIf awmp_Start.Ctlcontrols.currentPosition < 15.0 Then  '如果刚好到达了12430ms
+		ElseIf awmp_Start.Ctlcontrols.currentPosition < 15 Then
 			ptbx_Start.Location = New Point(0, -492.5)
 		Else
 			StartTimer.Stop()
@@ -41,22 +41,24 @@ Public Class Frm_Start
 	Private Sub Frm_Start_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 		AddHandler StartTimer.Elapsed, AddressOf Tmr_Start_Tick
 		If Not Tag = "sysrun" Then
-			Dim BGMPlaylist As IWMPPlaylist = awmp_Start.playlistCollection.newPlaylist(My.Computer.FileSystem.SpecialDirectories.Temp & "\solimmr_" & Now.Ticks & ".wpl")
-			BGMPlaylist.appendItem(awmp_Start.newMedia(My.Application.Info.DirectoryPath & "\data\resources\Startup_Full.wav"))
-			awmp_Start.currentPlaylist = BGMPlaylist
 			Refresh()
 			FormFade(Me, FadeType.FadeIn)
-			awmp_Start.Ctlcontrols.play()
+			awmp_Start.URL = My.Application.Info.DirectoryPath & "\data\resources\Startup_Full.mp3"
 		Else
 			Hide()
 			bgwk_Start.RunWorkerAsync()
 		End If
 	End Sub
 
+
 	Private Sub Frm_Start_Shown(sender As Object, e As EventArgs) Handles MyBase.Shown
 		If Not Tag = "sysrun" Then
 			bgwk_Start.RunWorkerAsync()
 			StartTimer.Start()
+			awmp_Start.Ctlcontrols.play()
+		Else
+			Hide()
+			bgwk_Start.RunWorkerAsync()
 		End If
 	End Sub
 
@@ -74,6 +76,9 @@ Public Class Frm_Start
 					Hide()
 				Else
 					Dim Main As New Frm_Main
+					If Tag <> Nothing Then
+						Main.Tag = Tag
+					End If
 					Main.Show()
 					Hide()
 				End If
@@ -95,6 +100,12 @@ Public Class Frm_Start
 				Directory.CreateDirectory(My.Application.Info.DirectoryPath & "\nodejs")
 				ZipFile.ExtractToDirectory(BotArcAPIUnpack, My.Application.Info.DirectoryPath & "\nodejs")
 				Invoke(New Action(Sub()
+									  lbl_start.Text = "Unpacking Portable JRE Data Pack..."
+								  End Sub))
+				Dim PortableJreUnpack As String = My.Application.Info.DirectoryPath & "\data\portable_jre.zip"
+				Directory.CreateDirectory(My.Application.Info.DirectoryPath & "\bin\Portable_JRE")
+				ZipFile.ExtractToDirectory(PortableJreUnpack, My.Application.Info.DirectoryPath & "\bin\Portable_JRE")
+				Invoke(New Action(Sub()
 									  lbl_start.Text = "Loading Main Window Components..."
 								  End Sub))
 				Thread.Sleep(200)
@@ -104,7 +115,6 @@ Public Class Frm_Start
 				FirstStart = True
 				Directory.CreateDirectory(My.Application.Info.DirectoryPath & "\data\players")
 				Directory.CreateDirectory(My.Application.Info.DirectoryPath & "\data\subscribes")
-				Directory.CreateDirectory(My.Application.Info.DirectoryPath & "\nodejs")
 				Do Until lbl_start.Location.Y >= 360
 					Threading.Thread.Sleep(15)
 					Invoke(New Action(Sub()
@@ -134,8 +144,9 @@ Public Class Frm_Start
 					Initialized = True
 					If Tag = "sysrun" Then
 						Invoke(New Action(Sub()
-											  Dim Main As New Frm_Main
-											  Main.Tag = "sysrun"
+											  Dim Main As New Frm_Main With {
+												  .Tag = "sysrun"
+											  }
 											  Main.Show()
 										  End Sub))
 					Else

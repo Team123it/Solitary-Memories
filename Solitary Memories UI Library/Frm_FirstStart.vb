@@ -124,6 +124,12 @@ Public Class Frm_FirstStart
 		Select Case Progress
 			Case 0 '?<-Welcome
 				btn_previous.Enabled = False
+			Case 1 'Step1
+				Progress = 0
+				Pnl_Step1.Visible = False
+				btn_previous.Enabled = False
+				Text = "Solitary Memories 初始化向导 - 第1步,共5步"
+				btn_next.Enabled = True
 			Case 2 'Welcome<-Step2 (No Step1)
 				Progress = 0
 				Pnl_Step2.Visible = False
@@ -245,11 +251,6 @@ Public Class Frm_FirstStart
 								  lbl_step1_status.Text = "正在初始化 BotArcAPI (Node.js:npm) ……"
 								  lbl_step1_status.Refresh()
 							  End Sub))
-			If Environment.GetEnvironmentVariable("Path", EnvironmentVariableTarget.User).EndsWith(";") Then
-				Environment.SetEnvironmentVariable("Path", Environment.GetEnvironmentVariable("Path", EnvironmentVariableTarget.User) & My.Application.Info.DirectoryPath & "\nodejs", EnvironmentVariableTarget.User)
-			Else
-				Environment.SetEnvironmentVariable("Path", Environment.GetEnvironmentVariable("Path", EnvironmentVariableTarget.User) & ";" & My.Application.Info.DirectoryPath & "\nodejs", EnvironmentVariableTarget.User)
-			End If
 			Dim NpmInitialization As Process
 			Dim NpmInitializationInfo As New ProcessStartInfo(My.Application.Info.DirectoryPath & "\nodejs\npm.cmd") With {
 					.Arguments = "config get prefix",

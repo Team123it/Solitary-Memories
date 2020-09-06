@@ -281,6 +281,7 @@ Public Class Frm_SolitaryBoxxx
 							If Playdate > StartDate AndAlso RecentSongScore >= 9800000 Then
 								NowProgress = 255
 								[Global].My.MySettings.Default.IsBest30FunctionUnlocked = True
+								[Global].My.MySettings.Default.AnomalyFunc_IsSolitaryBoxxxPassed = True
 								[Global].My.MySettings.Default.Save()
 								Finished = True
 								Invoke(New Action(Sub()
@@ -288,6 +289,8 @@ Public Class Frm_SolitaryBoxxx
 															 "您已解锁隐藏模块 - Best30查询模块。" & vbCrLf &
 															 "请回到主界面后单击""玩家(&P)""-""刷新状态(&R)""显示Best30查询模块入口。" & vbCrLf &
 															 "入口在主界面-""成绩(&S)""-""Best30查询(&B)""。", 0, "SOLITARY BOXXX Challenge Passed")
+													  Dim AnomalyFuncUnlock As New Frm_AnomalyFuncUnlock
+													  AnomalyFuncUnlock.Show()
 													  Close()
 												  End Sub))
 							Else

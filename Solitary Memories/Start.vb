@@ -2,8 +2,8 @@
 Imports System.Text
 Imports Team123it.Arcaea.Solimmr.UI
 Imports Team123it.Arcaea.Solimmr.Global
-Imports System.IO.Compression
-Imports System.IO
+Imports Microsoft.Win32
+Imports System.Environment
 
 Public Class Start
 	Public Shared Sub Main()
@@ -13,6 +13,20 @@ Public Class Start
 		End If
 		Select Case System.Environment.GetCommandLineArgs.Length
 			Case 1
+				If [Global].My.MySettings.Default.IsFirstStart Then
+					Dim RawPathStr As String = Registry.LocalMachine.OpenSubKey("SYSTEM").OpenSubKey("CurrentControlSet").OpenSubKey("Control").OpenSubKey("Session Manager").OpenSubKey("Environment").GetValue("Path")
+					If RawPathStr.EndsWith(";") Then
+						Registry.LocalMachine.OpenSubKey("SYSTEM", True).OpenSubKey("CurrentControlSet", True).OpenSubKey("Control", True).OpenSubKey("Session Manager", True).OpenSubKey("Environment", True).SetValue("Path", RawPathStr & My.Application.Info.DirectoryPath & "\nodejs")
+						RefreshEnvironmentVariables()
+						Process.Start(My.Application.Info.DirectoryPath & "\Solitary Memories.exe", "-restart")
+						[Exit](0)
+					Else
+						Registry.LocalMachine.OpenSubKey("SYSTEM", True).OpenSubKey("CurrentControlSet", True).OpenSubKey("Control", True).OpenSubKey("Session Manager", True).OpenSubKey("Environment", True).SetValue("Path", RawPathStr & ";" & My.Application.Info.DirectoryPath & "\nodejs")
+						RefreshEnvironmentVariables()
+						Process.Start(My.Application.Info.DirectoryPath & "\Solitary Memories.exe", "-restart")
+						[Exit](0)
+					End If
+				End If
 NormalStart:
 				If [Global].My.MySettings.Default.IsFirstStart Then
 					If MsgBox("Arcaea查分已违反了Lowiro服务协议(Terms of Service)第3.2-3与第3.2-6条。" & vbCrLf &
@@ -30,17 +44,22 @@ NormalStart:
 					Case "-?" '帮助
 						GetCommandLineHelp()
 					Case "-sysrun" '开机自启模式
-						Dim Start As New Frm_Start
-						Start.Tag = "sysrun"
+						Dim Start As New Frm_Start With {
+							.Tag = "sysrun"
+						}
 						Application.Run(Start)
-					Case "-debug"
+					Case "-debug" '调试模式
 						[Global].My.MySettings.Default.IsDebugModeOn = True
 						GoTo NormalStart
-					Case "-restart"
+					Case "-restart" '重启模式(直接跳到NormalStart且不判断是否有多个实例在运行)
 						GoTo NormalStart
-					Case "-update"
+					Case "-update" '更新模式(更新设置)
 						[Global].My.MySettings.Default.Upgrade()
 						[Global].My.MySettings.Default.Save()
+					Case "-afterupdate" '更新后初次启动模式(显示更新日志)
+						Dim Start As New Frm_Start With {
+							.Tag = "afterUpdate"}
+						Application.Run(Start)
 					Case Else
 						GetCommandLineHelp()
 				End Select

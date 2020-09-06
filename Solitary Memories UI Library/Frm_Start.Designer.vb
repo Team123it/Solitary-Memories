@@ -98,10 +98,10 @@ Partial Class Frm_Start
 		'awmp_Start
 		'
 		Me.awmp_Start.Enabled = True
-		Me.awmp_Start.Location = New System.Drawing.Point(553, 294)
+		Me.awmp_Start.Location = New System.Drawing.Point(592, 300)
 		Me.awmp_Start.Name = "awmp_Start"
 		Me.awmp_Start.OcxState = CType(resources.GetObject("awmp_Start.OcxState"), System.Windows.Forms.AxHost.State)
-		Me.awmp_Start.Size = New System.Drawing.Size(75, 23)
+		Me.awmp_Start.Size = New System.Drawing.Size(36, 36)
 		Me.awmp_Start.TabIndex = 5
 		Me.awmp_Start.Visible = False
 		'
@@ -119,10 +119,10 @@ Partial Class Frm_Start
 		Me.Controls.Add(Me.ptbx_Start)
 		Me.DoubleBuffered = True
 		Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+		Me.Icon = Global.Team123it.Arcaea.Solimmr.UI.My.Resources.Resources.icon
 		Me.MaximizeBox = False
 		Me.MaximumSize = New System.Drawing.Size(640, 360)
 		Me.MinimumSize = New System.Drawing.Size(640, 360)
-		Me.Icon = My.Resources.icon
 		Me.Name = "Frm_Start"
 		Me.ShowIcon = False
 		Me.ShowInTaskbar = False

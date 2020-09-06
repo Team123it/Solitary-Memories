@@ -21,19 +21,19 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_268B04F26EB74E88876934B6E6EF7494"
+        "MsmKey" = "8:_3D82C18821224329A5056FC49420FB11"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_27AC7C8FD1B878A1F3FEB841C8B4D60B"
-        "OwnerKey" = "8:_AEBBD6CBC88701AE20D656CEADF909D5"
+        "MsmKey" = "8:_4D33AC835C4A4B41AD261A9FBEAB0CBF"
+        "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_3D82C18821224329A5056FC49420FB11"
+        "MsmKey" = "8:_5A915AAD238F477C9EE80EE30091EBC6"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -63,13 +63,19 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_655EDFF6156A4F679E94A8F2C1B4E0C7"
+        "MsmKey" = "8:_8716849615434C4887915FDF91487DFF"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_8716849615434C4887915FDF91487DFF"
+        "MsmKey" = "8:_902EA6F16CB74B23B4B7F17AAC0C52F8"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_94918EF345AA4898A5A049A1B34447FD"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -99,14 +105,14 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_9EC548D8809881E2F6D37AEA945D4F25"
-        "OwnerKey" = "8:_27AC7C8FD1B878A1F3FEB841C8B4D60B"
+        "MsmKey" = "8:_AEBBD6CBC88701AE20D656CEADF909D5"
+        "OwnerKey" = "8:_CEB00FAE9C984C79B044F2F291310A0D"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_AEBBD6CBC88701AE20D656CEADF909D5"
-        "OwnerKey" = "8:_CEB00FAE9C984C79B044F2F291310A0D"
+        "MsmKey" = "8:_C424BBA56EF44C938481B5D494E26EB1"
+        "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -166,6 +172,12 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_4D33AC835C4A4B41AD261A9FBEAB0CBF"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_AEBBD6CBC88701AE20D656CEADF909D5"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -197,18 +209,6 @@
         {
         "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_2041695082209BF08B1D2427C66E593E"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_27AC7C8FD1B878A1F3FEB841C8B4D60B"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_9EC548D8809881E2F6D37AEA945D4F25"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -248,6 +248,14 @@
             "PrerequisitesLocation" = "2:1"
             "Url" = "8:"
             "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.6.1"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.6.1 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.6.1"
+                    }
+                }
             }
         }
         "Release"
@@ -259,7 +267,7 @@
         "PackageFilesAs" = "3:2"
         "PackageFileSize" = "3:-2147483648"
         "CabType" = "3:1"
-        "Compression" = "3:2"
+        "Compression" = "3:3"
         "SignOutput" = "11:FALSE"
         "CertificateFile" = "8:"
         "PrivateKeyFile" = "8:"
@@ -272,6 +280,14 @@
             "PrerequisitesLocation" = "2:1"
             "Url" = "8:"
             "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.6.1"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.6.1 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.6.1"
+                    }
+                }
             }
         }
     }
@@ -333,12 +349,12 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_268B04F26EB74E88876934B6E6EF7494"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_3D82C18821224329A5056FC49420FB11"
             {
-            "SourcePath" = "8:..\\Solitary Memories\\bin\\Release\\data\\resources\\Startup_Full.wav"
-            "TargetName" = "8:Startup_Full.wav"
+            "SourcePath" = "8:F:\\Java\\$Exes(Program Executable Files)\\123ArcAccGenerator.exe"
+            "TargetName" = "8:123ArcAccGenerator.exe"
             "Tag" = "8:"
-            "Folder" = "8:_159742E2321D476B9E72D805E14AA785"
+            "Folder" = "8:_9AFD9214507D44B3B1D14701E6F0C0D2"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -353,43 +369,43 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_27AC7C8FD1B878A1F3FEB841C8B4D60B"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_4D33AC835C4A4B41AD261A9FBEAB0CBF"
             {
             "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:TRUE"
-            "AssemblyAsmDisplayName" = "8:Microsoft.DirectX.DirectSound, Version=1.0.2902.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:apiupdate, Version=1.0.0.0, Culture=neutral, processorArchitecture=AMD64"
                 "ScatterAssemblies"
                 {
-                    "_27AC7C8FD1B878A1F3FEB841C8B4D60B"
+                    "_4D33AC835C4A4B41AD261A9FBEAB0CBF"
                     {
-                    "Name" = "8:Microsoft.DirectX.DirectSound.dll"
-                    "Attributes" = "3:518"
+                    "Name" = "8:apiupdate.exe"
+                    "Attributes" = "3:512"
                     }
                 }
-            "SourcePath" = "8:Microsoft.DirectX.DirectSound.dll"
+            "SourcePath" = "8:..\\Solitary Memories\\bin\\Release\\bin\\apiupdate.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
-            "Folder" = "8:_3309106C7D9E4F1A8586C5CF6381C8FA"
+            "Folder" = "8:_9AFD9214507D44B3B1D14701E6F0C0D2"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
             "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:TRUE"
-            "System" = "11:TRUE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
             "Permanent" = "11:FALSE"
             "SharedLegacy" = "11:FALSE"
             "PackageAs" = "3:1"
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
+            "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_3D82C18821224329A5056FC49420FB11"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_5A915AAD238F477C9EE80EE30091EBC6"
             {
-            "SourcePath" = "8:F:\\Java\\$Exes(Program Executable Files)\\123ArcAccGenerator.exe"
-            "TargetName" = "8:123ArcAccGenerator.exe"
+            "SourcePath" = "8:..\\Solitary Memories\\bin\\Release\\data\\resources\\Startup_Full.mp3"
+            "TargetName" = "8:Startup_Full.mp3"
             "Tag" = "8:"
-            "Folder" = "8:_9AFD9214507D44B3B1D14701E6F0C0D2"
+            "Folder" = "8:_159742E2321D476B9E72D805E14AA785"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -497,12 +513,12 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_655EDFF6156A4F679E94A8F2C1B4E0C7"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_8716849615434C4887915FDF91487DFF"
             {
-            "SourcePath" = "8:..\\Solitary Memories\\bin\\Release\\data\\resources\\Main_Loop.wav"
-            "TargetName" = "8:Main_Loop.wav"
+            "SourcePath" = "8:..\\Solitary Memories\\bin\\Release\\solimmr_ui.dll.config"
+            "TargetName" = "8:solimmr_ui.dll.config"
             "Tag" = "8:"
-            "Folder" = "8:_159742E2321D476B9E72D805E14AA785"
+            "Folder" = "8:_3309106C7D9E4F1A8586C5CF6381C8FA"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -517,12 +533,32 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_8716849615434C4887915FDF91487DFF"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_902EA6F16CB74B23B4B7F17AAC0C52F8"
             {
-            "SourcePath" = "8:..\\Solitary Memories\\bin\\Release\\solimmr_ui.dll.config"
-            "TargetName" = "8:solimmr_ui.dll.config"
+            "SourcePath" = "8:..\\Solitary Memories\\bin\\Release\\data\\portable_jre.zip"
+            "TargetName" = "8:portable_jre.zip"
             "Tag" = "8:"
-            "Folder" = "8:_3309106C7D9E4F1A8586C5CF6381C8FA"
+            "Folder" = "8:_9215F7704FB34EF29A695E7B0BA601D8"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_94918EF345AA4898A5A049A1B34447FD"
+            {
+            "SourcePath" = "8:..\\Solitary Memories\\bin\\Release\\data\\resources\\Main_Loop.mp3"
+            "TargetName" = "8:Main_Loop.mp3"
+            "Tag" = "8:"
+            "Folder" = "8:_159742E2321D476B9E72D805E14AA785"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -628,42 +664,11 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_9EC548D8809881E2F6D37AEA945D4F25"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:TRUE"
-            "AssemblyAsmDisplayName" = "8:Microsoft.DirectX, Version=1.0.2902.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35"
-                "ScatterAssemblies"
-                {
-                    "_9EC548D8809881E2F6D37AEA945D4F25"
-                    {
-                    "Name" = "8:Microsoft.DirectX.dll"
-                    "Attributes" = "3:518"
-                    }
-                }
-            "SourcePath" = "8:Microsoft.DirectX.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_3309106C7D9E4F1A8586C5CF6381C8FA"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:TRUE"
-            "System" = "11:TRUE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_AEBBD6CBC88701AE20D656CEADF909D5"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:solimmr_ui, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
+            "AssemblyAsmDisplayName" = "8:solimmr_ui, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
                     "_AEBBD6CBC88701AE20D656CEADF909D5"
@@ -690,6 +695,26 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_C424BBA56EF44C938481B5D494E26EB1"
+            {
+            "SourcePath" = "8:..\\Solitary Memories\\bin\\Release\\bin\\apiupdate.exe.config"
+            "TargetName" = "8:apiupdate.exe.config"
+            "Tag" = "8:"
+            "Folder" = "8:_9AFD9214507D44B3B1D14701E6F0C0D2"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:TRUE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_C90C1F6E81C441499EB1E23C16468845"
             {
             "SourcePath" = "8:..\\Solitary Memories\\bin\\Release\\solimmr_core.dll.config"
@@ -714,7 +739,7 @@
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:Solitary Memories, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
+            "AssemblyAsmDisplayName" = "8:Solitary Memories, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
                     "_CEB00FAE9C984C79B044F2F291310A0D"
@@ -776,7 +801,7 @@
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:solimmr_core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
+            "AssemblyAsmDisplayName" = "8:solimmr_core, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
                     "_E07264370BE4716D52E4D40C24D5C20D"
@@ -932,15 +957,15 @@
         {
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Solitary Memories"
-        "ProductCode" = "8:{1163BD04-E25B-4119-A6E8-C557AABA4BD7}"
-        "PackageCode" = "8:{09FDF5FB-0C5C-4F7C-8653-99867DFC37B6}"
+        "ProductCode" = "8:{7319A79B-01E5-414E-9DF7-D5833F2F6E5D}"
+        "PackageCode" = "8:{09236CB5-239C-4B07-9E12-8437399498F5}"
         "UpgradeCode" = "8:{07646364-18F1-4027-AF49-774199051AD2}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:FALSE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:FALSE"
-        "ProductVersion" = "8:1.0.0"
+        "ProductVersion" = "8:1.0.1"
         "Manufacturer" = "8:123 Open-Source Organization"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"

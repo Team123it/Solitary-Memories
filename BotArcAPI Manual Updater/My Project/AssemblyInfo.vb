@@ -8,7 +8,7 @@ Imports System.Runtime.InteropServices
 
 '查看程序集特性的值
 
-<Assembly: AssemblyTitle("Solitary Memories Global Library")>
+<Assembly: AssemblyTitle("BotArcAPI Manual Updater")>
 <Assembly: AssemblyDescription("")>
 <Assembly: AssemblyCompany("123 Open-Source Organization")>
 <Assembly: AssemblyProduct("Solitary Memories")>
@@ -18,7 +18,7 @@ Imports System.Runtime.InteropServices
 <Assembly: ComVisible(False)>
 
 '如果此项目向 COM 公开，则下列 GUID 用于类型库的 ID
-<Assembly: Guid("1f0abff4-6919-4a88-a964-087407ae5d60")>
+<Assembly: Guid("06e7a184-7163-44ac-869c-b1335980a735")>
 
 ' 程序集的版本信息由下列四个值组成: 
 '
@@ -32,4 +32,4 @@ Imports System.Runtime.InteropServices
 ' <Assembly: AssemblyVersion("1.0.*")>
 
 <Assembly: AssemblyVersion("1.0.1")>
-<Assembly: AssemblyFileVersion("1.0.1")>
+<Assembly: AssemblyFileVersion("1.0.0")>

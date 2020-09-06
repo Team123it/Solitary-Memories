@@ -23,6 +23,7 @@ Partial Class Frm_Main
 	<System.Diagnostics.DebuggerStepThrough()>
 	Private Sub InitializeComponent()
 		Me.components = New System.ComponentModel.Container()
+		Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Frm_Main))
 		Me.msp_Main = New System.Windows.Forms.MenuStrip()
 		Me.tsmi_players = New System.Windows.Forms.ToolStripMenuItem()
 		Me.tsmi_players_Manage = New System.Windows.Forms.ToolStripMenuItem()
@@ -42,22 +43,6 @@ Partial Class Frm_Main
 		Me.tsmi_help_sep = New System.Windows.Forms.ToolStripSeparator()
 		Me.tsmi_help_about = New System.Windows.Forms.ToolStripMenuItem()
 		Me.ntfi_Main = New System.Windows.Forms.NotifyIcon(Me.components)
-		Me.gbx_Start = New System.Windows.Forms.GroupBox()
-		Me.lbl_autoQueryFreq = New System.Windows.Forms.Label()
-		Me.lbl_min = New System.Windows.Forms.Label()
-		Me.lbl_ifmt4 = New System.Windows.Forms.Label()
-		Me.lbl_coreArcaeaVer = New System.Windows.Forms.Label()
-		Me.lbl_botarcapiVer = New System.Windows.Forms.Label()
-		Me.lbl_ifmt6 = New System.Windows.Forms.Label()
-		Me.lbl_ifmt5 = New System.Windows.Forms.Label()
-		Me.lbl_queryAccountsCount = New System.Windows.Forms.Label()
-		Me.lbl_ifmt3 = New System.Windows.Forms.Label()
-		Me.lbl_subscribesCount = New System.Windows.Forms.Label()
-		Me.lbl_ifmt2 = New System.Windows.Forms.Label()
-		Me.lbl_savedPlayerCount = New System.Windows.Forms.Label()
-		Me.lbl_ifmt = New System.Windows.Forms.Label()
-		Me.gbx_tips = New System.Windows.Forms.GroupBox()
-		Me.lbl_tips = New System.Windows.Forms.Label()
 		Me.cmsp_Main = New System.Windows.Forms.ContextMenuStrip(Me.components)
 		Me.tsmi_ntfi_Players = New System.Windows.Forms.ToolStripMenuItem()
 		Me.tsmi_ntfi_Players_Manage = New System.Windows.Forms.ToolStripMenuItem()
@@ -73,11 +58,29 @@ Partial Class Frm_Main
 		Me.tsmi_ntfi_ShowMain = New System.Windows.Forms.ToolStripMenuItem()
 		Me.tsmi_ntfi_Sep2 = New System.Windows.Forms.ToolStripSeparator()
 		Me.tsmi_ntfi_Exit = New System.Windows.Forms.ToolStripMenuItem()
+		Me.gbx_Start = New System.Windows.Forms.GroupBox()
+		Me.lbl_autoQueryFreq = New System.Windows.Forms.Label()
+		Me.lbl_min = New System.Windows.Forms.Label()
+		Me.lbl_ifmt4 = New System.Windows.Forms.Label()
+		Me.lbl_coreArcaeaVer = New System.Windows.Forms.Label()
+		Me.lbl_botarcapiVer = New System.Windows.Forms.Label()
+		Me.lbl_ifmt6 = New System.Windows.Forms.Label()
+		Me.lbl_ifmt5 = New System.Windows.Forms.Label()
+		Me.lbl_queryAccountsCount = New System.Windows.Forms.Label()
+		Me.lbl_ifmt3 = New System.Windows.Forms.Label()
+		Me.lbl_subscribesCount = New System.Windows.Forms.Label()
+		Me.lbl_ifmt2 = New System.Windows.Forms.Label()
+		Me.lbl_savedPlayerCount = New System.Windows.Forms.Label()
+		Me.lbl_ifmt = New System.Windows.Forms.Label()
+		Me.gbx_tips = New System.Windows.Forms.GroupBox()
+		Me.awmp_Main = New AxWMPLib.AxWindowsMediaPlayer()
+		Me.lbl_tips = New System.Windows.Forms.Label()
 		Me.bgwk_AutoUpdate = New System.ComponentModel.BackgroundWorker()
 		Me.msp_Main.SuspendLayout()
+		Me.cmsp_Main.SuspendLayout()
 		Me.gbx_Start.SuspendLayout()
 		Me.gbx_tips.SuspendLayout()
-		Me.cmsp_Main.SuspendLayout()
+		CType(Me.awmp_Main, System.ComponentModel.ISupportInitialize).BeginInit()
 		Me.SuspendLayout()
 		'
 		'msp_Main
@@ -200,6 +203,98 @@ Partial Class Frm_Main
 		Me.ntfi_Main.Icon = Global.Team123it.Arcaea.Solimmr.UI.My.Resources.Resources.icon
 		Me.ntfi_Main.Text = "Solitary Memories"
 		Me.ntfi_Main.Visible = True
+		'
+		'cmsp_Main
+		'
+		Me.cmsp_Main.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmi_ntfi_Players, Me.tsmi_ntfi_Scores, Me.tsmi_ntfi_Options, Me.tsmi_ntfi_Sep1, Me.tsmi_ntfi_ShowMain, Me.tsmi_ntfi_Sep2, Me.tsmi_ntfi_Exit})
+		Me.cmsp_Main.Name = "cmsp_Main"
+		Me.cmsp_Main.Size = New System.Drawing.Size(226, 126)
+		'
+		'tsmi_ntfi_Players
+		'
+		Me.tsmi_ntfi_Players.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmi_ntfi_Players_Manage})
+		Me.tsmi_ntfi_Players.Name = "tsmi_ntfi_Players"
+		Me.tsmi_ntfi_Players.Size = New System.Drawing.Size(225, 22)
+		Me.tsmi_ntfi_Players.Text = "玩家(&P)"
+		'
+		'tsmi_ntfi_Players_Manage
+		'
+		Me.tsmi_ntfi_Players_Manage.Name = "tsmi_ntfi_Players_Manage"
+		Me.tsmi_ntfi_Players_Manage.Size = New System.Drawing.Size(144, 22)
+		Me.tsmi_ntfi_Players_Manage.Text = "管理玩家(&M)"
+		'
+		'tsmi_ntfi_Scores
+		'
+		Me.tsmi_ntfi_Scores.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmi_ntfi_Scores_Query, Me.tsmi_ntfi_Scores_Subscribe, Me.tsmi_ntfi_Scores_Best30Query})
+		Me.tsmi_ntfi_Scores.Name = "tsmi_ntfi_Scores"
+		Me.tsmi_ntfi_Scores.Size = New System.Drawing.Size(225, 22)
+		Me.tsmi_ntfi_Scores.Text = "成绩(&S)"
+		'
+		'tsmi_ntfi_Scores_Query
+		'
+		Me.tsmi_ntfi_Scores_Query.Name = "tsmi_ntfi_Scores_Query"
+		Me.tsmi_ntfi_Scores_Query.Size = New System.Drawing.Size(155, 22)
+		Me.tsmi_ntfi_Scores_Query.Text = "查询(&Q)..."
+		'
+		'tsmi_ntfi_Scores_Subscribe
+		'
+		Me.tsmi_ntfi_Scores_Subscribe.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmi_ntfi_Scores_Subscribe_Add, Me.tsmi_ntfi_Scores_Subscribe_Remove, Me.tsmi_ntfi_Scores_Subscribe_ShowList})
+		Me.tsmi_ntfi_Scores_Subscribe.Name = "tsmi_ntfi_Scores_Subscribe"
+		Me.tsmi_ntfi_Scores_Subscribe.Size = New System.Drawing.Size(155, 22)
+		Me.tsmi_ntfi_Scores_Subscribe.Text = "订阅(&S)"
+		'
+		'tsmi_ntfi_Scores_Subscribe_Add
+		'
+		Me.tsmi_ntfi_Scores_Subscribe_Add.Name = "tsmi_ntfi_Scores_Subscribe_Add"
+		Me.tsmi_ntfi_Scores_Subscribe_Add.Size = New System.Drawing.Size(162, 22)
+		Me.tsmi_ntfi_Scores_Subscribe_Add.Text = "添加订阅(&A)"
+		'
+		'tsmi_ntfi_Scores_Subscribe_Remove
+		'
+		Me.tsmi_ntfi_Scores_Subscribe_Remove.Name = "tsmi_ntfi_Scores_Subscribe_Remove"
+		Me.tsmi_ntfi_Scores_Subscribe_Remove.Size = New System.Drawing.Size(162, 22)
+		Me.tsmi_ntfi_Scores_Subscribe_Remove.Text = "移除订阅(&R)"
+		'
+		'tsmi_ntfi_Scores_Subscribe_ShowList
+		'
+		Me.tsmi_ntfi_Scores_Subscribe_ShowList.Name = "tsmi_ntfi_Scores_Subscribe_ShowList"
+		Me.tsmi_ntfi_Scores_Subscribe_ShowList.Size = New System.Drawing.Size(162, 22)
+		Me.tsmi_ntfi_Scores_Subscribe_ShowList.Text = "查看订阅列表(&L)"
+		'
+		'tsmi_ntfi_Scores_Best30Query
+		'
+		Me.tsmi_ntfi_Scores_Best30Query.Name = "tsmi_ntfi_Scores_Best30Query"
+		Me.tsmi_ntfi_Scores_Best30Query.Size = New System.Drawing.Size(155, 22)
+		Me.tsmi_ntfi_Scores_Best30Query.Text = "Best30查询(&B)"
+		Me.tsmi_ntfi_Scores_Best30Query.Visible = False
+		'
+		'tsmi_ntfi_Options
+		'
+		Me.tsmi_ntfi_Options.Name = "tsmi_ntfi_Options"
+		Me.tsmi_ntfi_Options.Size = New System.Drawing.Size(225, 22)
+		Me.tsmi_ntfi_Options.Text = "选项(&O)"
+		'
+		'tsmi_ntfi_Sep1
+		'
+		Me.tsmi_ntfi_Sep1.Name = "tsmi_ntfi_Sep1"
+		Me.tsmi_ntfi_Sep1.Size = New System.Drawing.Size(222, 6)
+		'
+		'tsmi_ntfi_ShowMain
+		'
+		Me.tsmi_ntfi_ShowMain.Name = "tsmi_ntfi_ShowMain"
+		Me.tsmi_ntfi_ShowMain.Size = New System.Drawing.Size(225, 22)
+		Me.tsmi_ntfi_ShowMain.Text = "显示主界面(&M)"
+		'
+		'tsmi_ntfi_Sep2
+		'
+		Me.tsmi_ntfi_Sep2.Name = "tsmi_ntfi_Sep2"
+		Me.tsmi_ntfi_Sep2.Size = New System.Drawing.Size(222, 6)
+		'
+		'tsmi_ntfi_Exit
+		'
+		Me.tsmi_ntfi_Exit.Name = "tsmi_ntfi_Exit"
+		Me.tsmi_ntfi_Exit.Size = New System.Drawing.Size(225, 22)
+		Me.tsmi_ntfi_Exit.Text = "退出 Solitary Memories(&E)"
 		'
 		'gbx_Start
 		'
@@ -342,6 +437,7 @@ Partial Class Frm_Main
 		'
 		'gbx_tips
 		'
+		Me.gbx_tips.Controls.Add(Me.awmp_Main)
 		Me.gbx_tips.Controls.Add(Me.lbl_tips)
 		Me.gbx_tips.Location = New System.Drawing.Point(12, 156)
 		Me.gbx_tips.Name = "gbx_tips"
@@ -350,6 +446,16 @@ Partial Class Frm_Main
 		Me.gbx_tips.TabStop = False
 		Me.gbx_tips.Text = "Tips"
 		'
+		'awmp_Main
+		'
+		Me.awmp_Main.Enabled = True
+		Me.awmp_Main.Location = New System.Drawing.Point(626, 75)
+		Me.awmp_Main.Name = "awmp_Main"
+		Me.awmp_Main.OcxState = CType(resources.GetObject("awmp_Main.OcxState"), System.Windows.Forms.AxHost.State)
+		Me.awmp_Main.Size = New System.Drawing.Size(36, 34)
+		Me.awmp_Main.TabIndex = 4
+		Me.awmp_Main.Visible = False
+		'
 		'lbl_tips
 		'
 		Me.lbl_tips.Location = New System.Drawing.Point(20, 17)
@@ -357,98 +463,6 @@ Partial Class Frm_Main
 		Me.lbl_tips.Size = New System.Drawing.Size(624, 66)
 		Me.lbl_tips.TabIndex = 4
 		Me.lbl_tips.Text = "(暂无)"
-		'
-		'cmsp_Main
-		'
-		Me.cmsp_Main.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmi_ntfi_Players, Me.tsmi_ntfi_Scores, Me.tsmi_ntfi_Options, Me.tsmi_ntfi_Sep1, Me.tsmi_ntfi_ShowMain, Me.tsmi_ntfi_Sep2, Me.tsmi_ntfi_Exit})
-		Me.cmsp_Main.Name = "cmsp_Main"
-		Me.cmsp_Main.Size = New System.Drawing.Size(226, 126)
-		'
-		'tsmi_ntfi_Players
-		'
-		Me.tsmi_ntfi_Players.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmi_ntfi_Players_Manage})
-		Me.tsmi_ntfi_Players.Name = "tsmi_ntfi_Players"
-		Me.tsmi_ntfi_Players.Size = New System.Drawing.Size(225, 22)
-		Me.tsmi_ntfi_Players.Text = "玩家(&P)"
-		'
-		'tsmi_ntfi_Players_Manage
-		'
-		Me.tsmi_ntfi_Players_Manage.Name = "tsmi_ntfi_Players_Manage"
-		Me.tsmi_ntfi_Players_Manage.Size = New System.Drawing.Size(144, 22)
-		Me.tsmi_ntfi_Players_Manage.Text = "管理玩家(&M)"
-		'
-		'tsmi_ntfi_Scores
-		'
-		Me.tsmi_ntfi_Scores.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmi_ntfi_Scores_Query, Me.tsmi_ntfi_Scores_Subscribe, Me.tsmi_ntfi_Scores_Best30Query})
-		Me.tsmi_ntfi_Scores.Name = "tsmi_ntfi_Scores"
-		Me.tsmi_ntfi_Scores.Size = New System.Drawing.Size(225, 22)
-		Me.tsmi_ntfi_Scores.Text = "成绩(&S)"
-		'
-		'tsmi_ntfi_Scores_Query
-		'
-		Me.tsmi_ntfi_Scores_Query.Name = "tsmi_ntfi_Scores_Query"
-		Me.tsmi_ntfi_Scores_Query.Size = New System.Drawing.Size(155, 22)
-		Me.tsmi_ntfi_Scores_Query.Text = "查询(&Q)..."
-		'
-		'tsmi_ntfi_Scores_Subscribe
-		'
-		Me.tsmi_ntfi_Scores_Subscribe.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmi_ntfi_Scores_Subscribe_Add, Me.tsmi_ntfi_Scores_Subscribe_Remove, Me.tsmi_ntfi_Scores_Subscribe_ShowList})
-		Me.tsmi_ntfi_Scores_Subscribe.Name = "tsmi_ntfi_Scores_Subscribe"
-		Me.tsmi_ntfi_Scores_Subscribe.Size = New System.Drawing.Size(155, 22)
-		Me.tsmi_ntfi_Scores_Subscribe.Text = "订阅(&S)"
-		'
-		'tsmi_ntfi_Scores_Subscribe_Add
-		'
-		Me.tsmi_ntfi_Scores_Subscribe_Add.Name = "tsmi_ntfi_Scores_Subscribe_Add"
-		Me.tsmi_ntfi_Scores_Subscribe_Add.Size = New System.Drawing.Size(162, 22)
-		Me.tsmi_ntfi_Scores_Subscribe_Add.Text = "添加订阅(&A)"
-		'
-		'tsmi_ntfi_Scores_Subscribe_Remove
-		'
-		Me.tsmi_ntfi_Scores_Subscribe_Remove.Name = "tsmi_ntfi_Scores_Subscribe_Remove"
-		Me.tsmi_ntfi_Scores_Subscribe_Remove.Size = New System.Drawing.Size(162, 22)
-		Me.tsmi_ntfi_Scores_Subscribe_Remove.Text = "移除订阅(&R)"
-		'
-		'tsmi_ntfi_Scores_Subscribe_ShowList
-		'
-		Me.tsmi_ntfi_Scores_Subscribe_ShowList.Name = "tsmi_ntfi_Scores_Subscribe_ShowList"
-		Me.tsmi_ntfi_Scores_Subscribe_ShowList.Size = New System.Drawing.Size(162, 22)
-		Me.tsmi_ntfi_Scores_Subscribe_ShowList.Text = "查看订阅列表(&L)"
-		'
-		'tsmi_ntfi_Scores_Best30Query
-		'
-		Me.tsmi_ntfi_Scores_Best30Query.Name = "tsmi_ntfi_Scores_Best30Query"
-		Me.tsmi_ntfi_Scores_Best30Query.Size = New System.Drawing.Size(155, 22)
-		Me.tsmi_ntfi_Scores_Best30Query.Text = "Best30查询(&B)"
-		Me.tsmi_ntfi_Scores_Best30Query.Visible = False
-		'
-		'tsmi_ntfi_Options
-		'
-		Me.tsmi_ntfi_Options.Name = "tsmi_ntfi_Options"
-		Me.tsmi_ntfi_Options.Size = New System.Drawing.Size(225, 22)
-		Me.tsmi_ntfi_Options.Text = "选项(&O)"
-		'
-		'tsmi_ntfi_Sep1
-		'
-		Me.tsmi_ntfi_Sep1.Name = "tsmi_ntfi_Sep1"
-		Me.tsmi_ntfi_Sep1.Size = New System.Drawing.Size(222, 6)
-		'
-		'tsmi_ntfi_ShowMain
-		'
-		Me.tsmi_ntfi_ShowMain.Name = "tsmi_ntfi_ShowMain"
-		Me.tsmi_ntfi_ShowMain.Size = New System.Drawing.Size(225, 22)
-		Me.tsmi_ntfi_ShowMain.Text = "显示主界面(&M)"
-		'
-		'tsmi_ntfi_Sep2
-		'
-		Me.tsmi_ntfi_Sep2.Name = "tsmi_ntfi_Sep2"
-		Me.tsmi_ntfi_Sep2.Size = New System.Drawing.Size(222, 6)
-		'
-		'tsmi_ntfi_Exit
-		'
-		Me.tsmi_ntfi_Exit.Name = "tsmi_ntfi_Exit"
-		Me.tsmi_ntfi_Exit.Size = New System.Drawing.Size(225, 22)
-		Me.tsmi_ntfi_Exit.Text = "退出 Solitary Memories(&E)"
 		'
 		'bgwk_AutoUpdate
 		'
@@ -471,10 +485,11 @@ Partial Class Frm_Main
 		Me.Text = "Solitary Memories"
 		Me.msp_Main.ResumeLayout(False)
 		Me.msp_Main.PerformLayout()
+		Me.cmsp_Main.ResumeLayout(False)
 		Me.gbx_Start.ResumeLayout(False)
 		Me.gbx_Start.PerformLayout()
 		Me.gbx_tips.ResumeLayout(False)
-		Me.cmsp_Main.ResumeLayout(False)
+		CType(Me.awmp_Main, System.ComponentModel.ISupportInitialize).EndInit()
 		Me.ResumeLayout(False)
 		Me.PerformLayout()
 
@@ -531,4 +546,5 @@ Partial Class Frm_Main
 	Friend WithEvents tsmi_ntfi_Scores_Subscribe_Remove As Windows.Forms.ToolStripMenuItem
 	Friend WithEvents tsmi_ntfi_Scores_Subscribe_ShowList As Windows.Forms.ToolStripMenuItem
 	Friend WithEvents bgwk_AutoUpdate As ComponentModel.BackgroundWorker
+	Friend WithEvents awmp_Main As AxWMPLib.AxWindowsMediaPlayer
 End Class

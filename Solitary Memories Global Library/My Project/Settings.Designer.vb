@@ -65,11 +65,11 @@ Namespace My
                 Me("APIPort") = value
             End Set
         End Property
-        
-        <Global.System.Configuration.UserScopedSettingAttribute(),  _
-         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("True")>  _
-        Public Property IsFirstStart() As Boolean
+
+		<Global.System.Configuration.UserScopedSettingAttribute(),
+		 Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),
+		 Global.System.Configuration.DefaultSettingValueAttribute("True")>
+		Public Property IsFirstStart() As Boolean
             Get
                 Return CType(Me("IsFirstStart"),Boolean)
             End Get
@@ -147,6 +147,90 @@ Namespace My
             End Get
             Set
                 Me("IsDebugModeOn") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("0")>  _
+        Public Property AnomalyFunc_TotalManualQueryTimes() As Long
+            Get
+                Return CType(Me("AnomalyFunc_TotalManualQueryTimes"),Long)
+            End Get
+            Set
+                Me("AnomalyFunc_TotalManualQueryTimes") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property AnomalyFunc_IsSolitaryBoxxxPassed() As Boolean
+            Get
+                Return CType(Me("AnomalyFunc_IsSolitaryBoxxxPassed"),Boolean)
+            End Get
+            Set
+                Me("AnomalyFunc_IsSolitaryBoxxxPassed") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property AnomalyFunc_IsPlayersCountBiggerThan10() As Boolean
+            Get
+                Return CType(Me("AnomalyFunc_IsPlayersCountBiggerThan10"),Boolean)
+            End Get
+            Set
+                Me("AnomalyFunc_IsPlayersCountBiggerThan10") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property AnomalyFunc_IsQuerySpecialOrder() As Boolean
+            Get
+                Return CType(Me("AnomalyFunc_IsQuerySpecialOrder"),Boolean)
+            End Get
+            Set
+                Me("AnomalyFunc_IsQuerySpecialOrder") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property AnomalyFunc_IsConnectStringCorrect() As Boolean
+            Get
+                Return CType(Me("AnomalyFunc_IsConnectStringCorrect"),Boolean)
+            End Get
+            Set
+                Me("AnomalyFunc_IsConnectStringCorrect") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property AnomalyFunc_IsTriggeredUnlockEffects() As Boolean
+            Get
+                Return CType(Me("AnomalyFunc_IsTriggeredUnlockEffects"),Boolean)
+            End Get
+            Set
+                Me("AnomalyFunc_IsTriggeredUnlockEffects") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property IsUnlockedAnomalyFunc() As Boolean
+            Get
+                Return CType(Me("IsUnlockedAnomalyFunc"),Boolean)
+            End Get
+            Set
+                Me("IsUnlockedAnomalyFunc") = value
             End Set
         End Property
     End Class

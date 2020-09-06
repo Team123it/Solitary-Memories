@@ -46,6 +46,10 @@ Public Class Frm_PlayersManager
 								btn_Remove.Enabled = False
 								tbx_PlayerId.Clear()
 								tbx_PlayerNick.Clear()
+								If dtst_Players.Tables(0).Rows.Count >= 10 Then
+									Dim AnomalyFunc As New Frm_AnomalyFuncUnlock
+									AnomalyFunc.Show()
+								End If
 							End If
 						Else
 							MsgBox("添加失败:玩家信息正确性校验失败:填写的玩家昵称与玩家的实际昵称不符" & vbCrLf &

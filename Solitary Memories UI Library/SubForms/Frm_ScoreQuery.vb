@@ -18,6 +18,7 @@ Public Class Frm_ScoreQuery
 	Dim Null As JToken
 	Dim RawJsonStr As String
 	Dim Best30UnlockProcess As Byte = 0
+	Dim AnomalyFuncUnlock3Progress As Byte = 0
 	Private Sub Frm_ScoreQuery_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 		For Each Player In Directory.GetFiles(PlayersPath) '遍历添加存储的玩家信息
 			cbb_playersList.Items.Add(Split(Player, "\", Compare:=CompareMethod.Text)(Split(Player, "\", Compare:=CompareMethod.Text).Length - 1))
@@ -286,6 +287,20 @@ Public Class Frm_ScoreQuery
 							Case Else '查的是其它歌曲(进度清零)
 								Best30UnlockProcess = 0
 						End Select
+						If Not [Global].My.MySettings.Default.AnomalyFunc_IsQuerySpecialOrder Then
+							If SongId = "grievouslady" AndAlso DiffStr.Trim.ToLower.StartsWith("future") AndAlso
+								ClearType <> "Track Lost" AndAlso AnomalyFuncUnlock3Progress = 0 Then
+								AnomalyFuncUnlock3Progress = 1
+							ElseIf SongId = "fractureray" AndAlso DiffStr.Trim.ToLower.StartsWith("future") AndAlso
+								ClearType <> "Track Lost" AndAlso AnomalyFuncUnlock3Progress = 1 Then
+								AnomalyFuncUnlock3Progress = 2
+							ElseIf SongId = "tempestissimo" AndAlso (DiffStr.Trim.ToLower.StartsWith("future") Or DiffStr.Trim.ToLower.StartsWith("beyond")) AndAlso
+								ClearType <> "Track Lost" AndAlso AnomalyFuncUnlock3Progress = 2 Then
+								AnomalyFuncUnlock3Progress = 3
+							Else
+								AnomalyFuncUnlock3Progress = 0
+							End If
+						End If
 					End If
 				Case -1 'invalid usercode
 					ResultBuilder.Append("错误:无效的玩家id(-1)")
@@ -295,7 +310,7 @@ Public Class Frm_ScoreQuery
 					ResultBuilder.Append("错误:无效的难度(-3)")
 				Case -4 'invalid difficulty (map format failed)
 					ResultBuilder.Append("错误:无效的难度(谱面格式不支持)(-4)" & vbCrLf &
-										 "疑难解答:该错误通常在BotArcAPI为非最新版本时出现, 请检查BotArcAPI是否为最新版本(主界面-""帮助(&H)""-""检查 BotArcAPI 更新(&B)"")。")
+										 "疑难解答:请检查BotArcAPI是否为最新版本(主界面-""帮助(&H)""-""检查 BotArcAPI 更新(&B)"")。")
 				Case -5 'this song is not recorded in the database
 					ResultBuilder.Append("错误:未找到曲目信息,可能未收录进数据库(-5)")
 				Case -6 'too many records(of the song alias)
@@ -322,6 +337,21 @@ Public Class Frm_ScoreQuery
 			Invoke(New Action(Sub()
 								  tbx_result.Text = ResultBuilder.ToString
 							  End Sub))
+			If Not [Global].My.MySettings.Default.AnomalyFunc_IsQuerySpecialOrder AndAlso AnomalyFuncUnlock3Progress = 3 Then
+				Invoke(New Action(Sub()
+									  Dim AnomalyFunc As New Frm_AnomalyFuncUnlock
+									  AnomalyFunc.Show()
+								  End Sub))
+			End If
+			If [Global].My.MySettings.Default.AnomalyFunc_TotalManualQueryTimes <= 51 Then
+				[Global].My.MySettings.Default.AnomalyFunc_TotalManualQueryTimes += 1
+			End If
+			If [Global].My.MySettings.Default.AnomalyFunc_TotalManualQueryTimes = 50 Then
+				Invoke(New Action(Sub()
+									  Dim AnomalyFunc As New Frm_AnomalyFuncUnlock
+									  AnomalyFunc.Show()
+								  End Sub))
+			End If
 			Call CheckBest30UnlockProgress()
 #End Region
 		Catch ex As Exception
